@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Directories
+old/
+img/
+site-performance/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cursor
+.cursorrules
+

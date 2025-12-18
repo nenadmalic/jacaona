@@ -1,0 +1,115 @@
+/* Custom CSS for Jačaona website */
+
+/* Remove default margin/padding */
+html, body {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.bg-e5,
+.hover\:bg-e5:hover {
+    background-color: #e50000;
+}
+.bg-0a0a0a {
+    background-color: #0a0a0a;
+}
+.bg-121212 {
+    background-color: #121212;
+}
+.bg-141414,
+.schedule-section {
+    background-color: #141414;
+}
+
+/* Hero section - start from position 0 (only on homepage) */
+.hero-section,
+section:first-of-type:has(.hero-slide) {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1;
+}
+
+/* Ensure header overlays the hero section */
+#main-header {
+    position: sticky;
+    z-index: 50;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+#main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+/* Content after hero section */
+section:not(:first-of-type) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Slider - ensure slides are fully visible */
+.hero-slide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hero-slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Schedule items */
+.schedule-item {
+    text-align: center;
+}
+
+.schedule-section th,
+.schedule-section td {
+    border: 1px solid !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Schedule table cells - all same width */
+.schedule-section tbody td {
+    width: 125px;
+    text-align: center;
+}
+
+/* Gallery items */
+.gallery-item {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Breadcrumb section styling - ensure it's not affected by hero section styles */
+section[style*="height: 300px"],
+section:first-of-type:not(.hero-section) {
+    height: 300px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    top: auto !important;
+}
+
+/* Print styles */
+@media print {
+    header, footer, .no-print {
+        display: none;
+    }
+}
+
