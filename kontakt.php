@@ -4,7 +4,8 @@ require_once __DIR__ . '/includes/config.php';
 
 $current_page = 'kontakt';
 $page_title = t('contact_title', $lang);
-$page_description = t('meta_description', $lang);
+$page_description = t('contact_meta_description', $lang);
+$schema_page_type = 'ContactPage';
 
 require_once __DIR__ . '/includes/header.php';
 ?>

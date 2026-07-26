@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 
 $current_page = 'o-nama';
 $page_title = t('about_page_title', $lang);
-$page_description = t('meta_description', $lang);
+$page_description = t('about_meta_description', $lang);
 
 require_once __DIR__ . '/includes/header.php';
 ?>

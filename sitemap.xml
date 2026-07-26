@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.jacaona.com/</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/o-nama</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/o-nama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/o-nama"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/o-nama"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/galerija</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/galerija"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/galerija"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/galerija"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/kontakt"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/en/o-nama</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/o-nama"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/o-nama"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/o-nama"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/en/galerija</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/galerija"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/galerija"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/galerija"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jacaona.com/en/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.jacaona.com/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jacaona.com/en/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.jacaona.com/kontakt"/>
+    <lastmod>2026-07-27</lastmod>
+  </url>
+</urlset>

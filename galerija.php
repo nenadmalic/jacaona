@@ -4,7 +4,7 @@ require_once __DIR__ . '/includes/config.php';
 
 $current_page = 'galerija';
 $page_title = t('gallery_title', $lang);
-$page_description = t('meta_description', $lang);
+$page_description = t('gallery_meta_description', $lang);
 
 require_once __DIR__ . '/includes/header.php';
 
