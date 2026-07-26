@@ -93,7 +93,7 @@ require_once __DIR__ . '/includes/header.php';
                      style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-6.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_1_title', $lang); ?></h3>
+                    <h2 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_1_title', $lang); ?></h2>
                     <p class="text-gray-300"><?php echo t('feature_1_text', $lang); ?></p>
                 </div>
             </div>
@@ -104,7 +104,7 @@ require_once __DIR__ . '/includes/header.php';
                      style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-5.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_2_title', $lang); ?></h3>
+                    <h2 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_2_title', $lang); ?></h2>
                     <p class="text-gray-300"><?php echo t('feature_2_text', $lang); ?></p>
                 </div>
             </div>
@@ -115,7 +115,7 @@ require_once __DIR__ . '/includes/header.php';
                      style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-4.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_3_title', $lang); ?></h3>
+                    <h2 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_3_title', $lang); ?></h2>
                     <p class="text-gray-300"><?php echo t('feature_3_text', $lang); ?></p>
                 </div>
             </div>

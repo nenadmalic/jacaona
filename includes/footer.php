@@ -16,7 +16,7 @@
                     </div>
                     <p class="mb-8"><?php echo t('footer_tagline', $lang); ?></p>
                     <div>
-                        <h6 class="text-white font-medium uppercase mb-5"><?php echo t('footer_follow', $lang); ?></h6>
+                        <h2 class="text-white font-medium uppercase mb-5"><?php echo t('footer_follow', $lang); ?></h2>
                         <div class="flex space-x-8">
                             <a href="https://www.facebook.com/jacaona/" target="_blank" rel="noopener noreferrer" 
                                class="text-white hover:text-e5 transition-colors">
@@ -42,7 +42,7 @@
                 
                 <!-- Navigation -->
                 <div class="lg:col-span-2 lg:col-start-5">
-                    <h5 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_nav', $lang); ?></h5>
+                    <h2 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_nav', $lang); ?></h2>
                     <ul class="space-y-5">
                         <li><a href="<?php echo url('', $lang); ?>" class="uppercase text-white hover:text-e5 transition-colors"><?php echo t('nav_home', $lang); ?></a></li>
                         <li><a href="<?php echo url('o-nama', $lang); ?>" class="uppercase text-white hover:text-e5 transition-colors"><?php echo t('nav_about', $lang); ?></a></li>
@@ -53,7 +53,7 @@
 
                 <!-- Sections -->
                 <div class="lg:col-span-3">
-                    <h5 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_sections', $lang); ?></h5>
+                    <h2 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_sections', $lang); ?></h2>
                     <ul class="space-y-[22px] font-display font-medium text-white">
                         <li><?php echo t('section_gts', $lang); ?></li>
                         <li><?php echo t('section_contm', $lang); ?></li>
@@ -68,7 +68,7 @@
                 
                 <!-- Contact -->
                 <div class="lg:col-span-3">
-                    <h5 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_contact', $lang); ?></h5>
+                    <h2 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_contact', $lang); ?></h2>
                     <ul class="space-y-5">
                         <li>
                             <div class="flex items-start">

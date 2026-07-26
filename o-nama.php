@@ -40,14 +40,14 @@ require_once __DIR__ . '/includes/header.php';
         
         <div class="grid md:grid-cols-2 gap-12 mb-12">
             <div>
-                <h4 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_1_title', $lang); ?></h4>
+                <h3 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_1_title', $lang); ?></h3>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_1_text_1', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_1_text_2', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_1_text_3', $lang); ?></p>
                 <p class="text-gray-300"><?php echo t('about_section_1_text_4', $lang); ?></p>
             </div>
             <div>
-                <h4 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_2_title', $lang); ?></h4>
+                <h3 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_2_title', $lang); ?></h3>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_2_text_1', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_2_text_2', $lang); ?></p>
                 <p class="text-gray-300"><?php echo t('about_section_2_text_3', $lang); ?></p>
@@ -56,14 +56,14 @@ require_once __DIR__ . '/includes/header.php';
         
         <div class="grid md:grid-cols-2 gap-12">
             <div>
-                <h4 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_3_title', $lang); ?></h4>
+                <h3 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_3_title', $lang); ?></h3>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_3_text_1', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_3_text_2', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_3_text_3', $lang); ?></p>
                 <p class="text-gray-300"><?php echo t('about_section_3_text_4', $lang); ?></p>
             </div>
             <div>
-                <h4 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_4_title', $lang); ?></h4>
+                <h3 class="text-2xl font-bold mb-4 font-display"><?php echo t('about_section_4_title', $lang); ?></h3>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_4_text_1', $lang); ?></p>
                 <p class="text-gray-300 mb-4"><?php echo t('about_section_4_text_2', $lang); ?></p>
                 <p class="text-gray-300"><?php echo t('about_section_4_text_3', $lang); ?></p>
@@ -84,13 +84,13 @@ require_once __DIR__ . '/includes/header.php';
                         </svg>
                     <?php endfor; ?>
                 </div>
-                <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_1', $lang); ?></h4>
+                <blockquote class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_1', $lang); ?></blockquote>
                 <div class="flex items-center">
                     <div class="mr-4">
                         <img src="<?php echo img_url('img/testimonials/sanh-logo-60px.png', 'w_128'); ?>" alt="SANH logo" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 object-contain">
                     </div>
                     <div>
-                        <h5 class="font-bold text-white"><?php echo t('testimonial_1_author', $lang); ?></h5>
+                        <p class="font-bold text-white"><?php echo t('testimonial_1_author', $lang); ?></p>
                         <span class="text-gray-300 text-sm"><?php echo t('testimonial_1_role', $lang); ?></span>
                     </div>
                 </div>
@@ -104,13 +104,13 @@ require_once __DIR__ . '/includes/header.php';
                         </svg>
                     <?php endfor; ?>
                 </div>
-                <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_2', $lang); ?></h4>
+                <blockquote class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_2', $lang); ?></blockquote>
                 <div class="flex items-center">
                     <div class="mr-4">
                         <img src="<?php echo img_url('img/testimonials/mario-poljak-o-jacaoni.jpg', 'w_128,c_fill,ar_1:1'); ?>" alt="Mario Poljak" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 rounded-full object-cover">
                     </div>
                     <div>
-                        <h5 class="font-bold text-white"><?php echo t('testimonial_2_author', $lang); ?></h5>
+                        <p class="font-bold text-white"><?php echo t('testimonial_2_author', $lang); ?></p>
                         <span class="text-gray-300 text-sm"><?php echo t('testimonial_2_role', $lang); ?></span>
                     </div>
                 </div>
@@ -124,13 +124,13 @@ require_once __DIR__ . '/includes/header.php';
                         </svg>
                     <?php endfor; ?>
                 </div>
-                <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_3', $lang); ?></h4>
+                <blockquote class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_3', $lang); ?></blockquote>
                 <div class="flex items-center">
                     <div class="mr-4">
                         <img src="<?php echo img_url('img/testimonials/3b-ju-jitsu-logo.png', 'w_128'); ?>" alt="3B Ju-Jitsu logo" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 object-contain">
                     </div>
                     <div>
-                        <h5 class="font-bold text-white"><?php echo t('testimonial_3_author', $lang); ?></h5>
+                        <p class="font-bold text-white"><?php echo t('testimonial_3_author', $lang); ?></p>
                         <span class="text-gray-300 text-sm"><?php echo t('testimonial_3_role', $lang); ?></span>
                     </div>
                 </div>
@@ -150,53 +150,53 @@ require_once __DIR__ . '/includes/header.php';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Existing members -->
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Nenad Malić<span class="text-sm font-normal text-gray-300">, bacc.oec.</span></h5>
+                <p class="font-bold mb-2 text-white">Nenad Malić<span class="text-sm font-normal text-gray-300">, bacc.oec.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_president', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Darijo Juričić<span class="text-sm font-normal text-gray-300">, mag. ing. tch. graph.</span></h5>
+                <p class="font-bold mb-2 text-white">Darijo Juričić<span class="text-sm font-normal text-gray-300">, mag. ing. tch. graph.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_vice_president', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Jure Dean<span class="text-sm font-normal text-gray-300">, univ. mag. oec.</span></h5>
+                <p class="font-bold mb-2 text-white">Jure Dean<span class="text-sm font-normal text-gray-300">, univ. mag. oec.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_secretary', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Marko Domgjoni<span class="text-sm font-normal text-gray-300">, mag. ing. geol.</span></h5>
+                <p class="font-bold mb-2 text-white">Marko Domgjoni<span class="text-sm font-normal text-gray-300">, mag. ing. geol.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_founding_member', $lang); ?></p>
             </div>
             
             <!-- Other members -->
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Lucija Matanović<span class="text-sm font-normal text-gray-300">, mag. psych.</span></h5>
+                <p class="font-bold mb-2 text-white">Lucija Matanović<span class="text-sm font-normal text-gray-300">, mag. psych.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_founding_member', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Saša Kovačević</h5>
+                <p class="font-bold mb-2 text-white">Saša Kovačević</p>
                 <p class="text-sm text-gray-300"><?php echo t('org_founding_member', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Mario Poljak<span class="text-sm font-normal text-gray-300">, mag. iur.</span></h5>
+                <p class="font-bold mb-2 text-white">Mario Poljak<span class="text-sm font-normal text-gray-300">, mag. iur.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_trainer', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Josip Barbača<span class="text-sm font-normal text-gray-300">, mag. ing. traff.</span></h5>
+                <p class="font-bold mb-2 text-white">Josip Barbača<span class="text-sm font-normal text-gray-300">, mag. ing. traff.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_founding_member', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Petra G. Puljek<span class="text-sm font-normal text-gray-300">, bacc. rel. int.</span></h5>
+                <p class="font-bold mb-2 text-white">Petra G. Puljek<span class="text-sm font-normal text-gray-300">, bacc. rel. int.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_founding_member', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Josip Kornet</h5>
+                <p class="font-bold mb-2 text-white">Josip Kornet</p>
                 <p class="text-sm text-gray-300"><?php echo t('org_trainer', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Vida Štefan<span class="text-sm font-normal text-gray-300">, univ. mag. cin.</span></h5>
+                <p class="font-bold mb-2 text-white">Vida Štefan<span class="text-sm font-normal text-gray-300">, univ. mag. cin.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_trainer', $lang); ?></p>
             </div>
             <div class="bg-141414 rounded-lg p-6 text-center">
-                <h5 class="font-bold mb-2 text-white">Luka Pešun<span class="text-sm font-normal text-gray-300">, mag. art.</span></h5>
+                <p class="font-bold mb-2 text-white">Luka Pešun<span class="text-sm font-normal text-gray-300">, mag. art.</span></p>
                 <p class="text-sm text-gray-300"><?php echo t('org_trainer', $lang); ?></p>
             </div>
         </div>

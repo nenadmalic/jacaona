@@ -37,8 +37,8 @@ $gallery_items = [
     ['img' => 'img/gallery/jacaona-na-ljeto-2011.jpg', 'title' => 'Otvaranje Jačaone na ljeto 2011.', 'categories' => 'jacaona'],
     ['img' => 'img/gallery/jacaona-na-ljeto-2011-otvaranje-dvorane.jpg', 'title' => 'Otvaranje Jačaone na ljeto 2011.', 'categories' => 'jacaona'],
     ['img' => 'img/gallery/jacaona-radovi-pred-otvaranje-dvorane-2011.jpg', 'title' => 'Radovi pred otvaranje dvorane 2011.', 'categories' => 'jacaona'],
-    ['img' => 'img/gallery/jacaona-smjena sekcija.jpg', 'title' => 'Smjena sekcija Jiu-Jitsu i Snaga i kondicija', 'categories' => 'jacaona snaga-i-kondicija jiujitsu'],
-    ['img' => 'img/gallery/jacaona-smjena sekcija Ju-Jitsu i dizanje utega-1.jpg', 'title' => 'Smjena sekcija Jiu-Jitsu i dizanje utega', 'categories' => 'jacaona jiujitsu dizanje-utega'],
+    ['img' => 'img/gallery/jacaona-smjena-sekcija.jpg', 'title' => 'Smjena sekcija Jiu-Jitsu i Snaga i kondicija', 'categories' => 'jacaona snaga-i-kondicija jiujitsu'],
+    ['img' => 'img/gallery/jacaona-smjena-sekcija-ju-jitsu-i-dizanje-utega-1.jpg', 'title' => 'Smjena sekcija Jiu-Jitsu i dizanje utega', 'categories' => 'jacaona jiujitsu dizanje-utega'],
     ['img' => 'img/gallery/dizanje-utega-2-custom-napravljen-rack-za-dizanje-utega.jpg', 'title' => 'Custom napravljen rack za dizanje utega', 'categories' => 'jacaona dizanje-utega'],
     
     // JačaONA
@@ -113,6 +113,7 @@ $gallery_items = [
 <!-- Gallery Section -->
 <section class="py-16">
     <div class="container mx-auto px-4">
+        <h2 class="sr-only"><?php echo t('gallery_all', $lang); ?></h2>
         <!-- Gallery Filters -->
         <div class="flex flex-wrap justify-center gap-2 mb-8">
             <button class="gallery-filter-btn px-4 py-2 rounded-md bg-e5 text-white font-bold" data-filter="all">
