@@ -212,7 +212,7 @@ require_once __DIR__ . '/includes/header.php';
                 <tbody>
                     <!-- 8:30 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">8.30</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">8.30</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
                             <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
@@ -244,7 +244,7 @@ require_once __DIR__ . '/includes/header.php';
                     </tr>
                     <!-- 11:00 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">11.00</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">11.00</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -262,7 +262,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 15:00 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">15.00</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">15.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="contm">
                             <span class="text-sm">15.00 - 16.00</span>
                             <span class="block font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></span>
@@ -289,7 +289,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 16:30 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">16.30</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">16.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">16.30 - 17.30</span>
@@ -307,7 +307,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 17:00 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">17.00</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">17.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">17.00 - 19.00</span>
                             <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
@@ -328,7 +328,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 17:30 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">17.30</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">17.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ona">
                             <span class="text-sm">17.30 - 18.30</span>
@@ -346,7 +346,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 19:00 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">19.00</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">19.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">19.00 - 20.00</span>
                             <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
@@ -367,7 +367,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 20:00 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.00</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">20.00</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="wchun">
                             <span class="text-sm">20.00 - 21.30</span>
@@ -391,7 +391,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 20:15 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.15</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">20.15</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ftren">
                             <span class="text-sm">20.15 - 21.30</span>
                             <span class="block font-bold text-e5"><?php echo t('schedule_ftren', $lang); ?></span>
@@ -409,7 +409,7 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 20:30 -->
                     <tr>
-                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.30</th>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold">20.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
