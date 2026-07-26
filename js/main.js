@@ -67,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Slides 2-3 carry their background in data-bg so only the first slide
+    // competes with first paint; applied once the page has loaded
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.hero-slide[data-bg]').forEach(slide => {
+            slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+        });
+    });
+
     if (heroSlides.length > 0) {
         if (sliderPlaying) startAuto();
         updatePauseButton();

@@ -5,6 +5,7 @@ require_once __DIR__ . '/includes/config.php';
 $current_page = '';
 $page_title = t('home_title', $lang);
 $page_description = t('meta_description', $lang);
+$preload_image = img_url('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d.jpg', 'w_1920');
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -12,9 +13,9 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Hero Section with simple CSS slider -->
 <section class="hero-section relative h-screen overflow-hidden" style="margin-top: 0; padding-top: 0;">
     <div id="hero-slider" class="relative h-full" role="region" aria-roledescription="carousel" aria-label="Jačaona">
-        <!-- Slide 1 -->
-        <div class="hero-slide active absolute inset-0 bg-cover bg-center bg-no-repeat" 
-             style="background-image: url('<?php echo asset('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d.jpg'); ?>');">
+        <!-- Slide 1 (LCP image — preloaded in the head) -->
+        <div class="hero-slide active absolute inset-0 bg-cover bg-center bg-no-repeat"
+             style="background-image: url('<?php echo $preload_image; ?>');">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <h1 class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</h1>
@@ -23,9 +24,9 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         </div>
         
-        <!-- Slide 2 -->
-        <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat" 
-             style="background-image: url('<?php echo asset('img/hero-slider/hero-1b.jpg'); ?>');">
+        <!-- Slide 2 (background applied after window load) -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
+             data-bg="<?php echo img_url('img/hero-slider/hero-1b.jpg', 'w_1920'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
@@ -34,9 +35,9 @@ require_once __DIR__ . '/includes/header.php';
             </div>
         </div>
         
-        <!-- Slide 3 -->
-        <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat" 
-             style="background-image: url('<?php echo asset('img/hero-slider/hero-3b.jpg'); ?>');">
+        <!-- Slide 3 (background applied after window load) -->
+        <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
+             data-bg="<?php echo img_url('img/hero-slider/hero-3b.jpg', 'w_1920'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
@@ -89,7 +90,7 @@ require_once __DIR__ . '/includes/header.php';
             <!-- Feature 1 -->
             <div class="bg-141414 rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow">
                 <div class="bg-cover bg-center" 
-                     style="height: 380px; background-image: url('<?php echo asset('img/feature/feature-6.jpg'); ?>');">
+                     style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-6.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_1_title', $lang); ?></h3>
@@ -100,7 +101,7 @@ require_once __DIR__ . '/includes/header.php';
             <!-- Feature 2 -->
             <div class="bg-141414 rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow">
                 <div class="bg-cover bg-center" 
-                     style="height: 380px; background-image: url('<?php echo asset('img/feature/feature-5.jpg'); ?>');">
+                     style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-5.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_2_title', $lang); ?></h3>
@@ -111,7 +112,7 @@ require_once __DIR__ . '/includes/header.php';
             <!-- Feature 3 -->
             <div class="bg-141414 rounded-lg shadow-md overflow-hidden group hover:shadow-xl transition-shadow">
                 <div class="bg-cover bg-center" 
-                     style="height: 380px; background-image: url('<?php echo asset('img/feature/feature-4.jpg'); ?>');">
+                     style="height: 380px; background-image: url('<?php echo img_url('img/feature/feature-4.jpg', 'w_800'); ?>');">
                 </div>
                 <div class="p-6">
                     <h3 class="text-xl font-bold mb-3 font-display text-white"><?php echo t('feature_3_title', $lang); ?></h3>
@@ -145,7 +146,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Booking Section -->
 <section class="py-20 bg-cover bg-center bg-no-repeat relative" 
-         style="background-image: url('<?php echo asset('img/classes-title-bg2.jpg'); ?>');">
+         style="background-image: url('<?php echo img_url('img/classes-title-bg2.jpg', 'w_1920'); ?>');">
     <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white max-w-3xl mx-auto">

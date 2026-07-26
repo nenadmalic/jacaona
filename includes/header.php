@@ -48,6 +48,12 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo asset('img/favicon/apple-touch-icon.png'); ?>">
     <link rel="manifest" href="<?php echo asset('img/favicon/site.webmanifest'); ?>">
     
+<?php if (!empty($preload_image)): ?>
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($preload_image); ?>">
+<?php endif; ?>
+<?php if (CLOUDINARY_CLOUD !== ''): ?>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+<?php endif; ?>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -128,8 +134,9 @@ $page_description = $page_description ?? t('meta_description', $lang);
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <a href="<?php echo url('', $lang); ?>" class="flex items-center">
-                    <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>" 
-                         alt="Jačaona logo" 
+                    <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>"
+                         alt="Jačaona logo"
+                         width="775" height="135"
                          class="h-9 w-auto">
                 </a>
                 

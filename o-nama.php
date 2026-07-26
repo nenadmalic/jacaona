@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Breadcrumb Section -->
 <section class="breadcrumb-section bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
-         style="background-image: url('<?php echo asset('img/about-us-triculja.jpg'); ?>'); height: 300px;">
+         style="background-image: url('<?php echo img_url('img/about-us-triculja.jpg', 'w_1920'); ?>'); height: 300px;">
     <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-white text-center">
@@ -87,7 +87,7 @@ require_once __DIR__ . '/includes/header.php';
                 <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_1', $lang); ?></h4>
                 <div class="flex items-center">
                     <div class="mr-4">
-                        <img src="<?php echo asset('img/testimonials/sanh-logo-60px.png'); ?>" alt="SANH logo" class="w-16 h-16 object-contain">
+                        <img src="<?php echo img_url('img/testimonials/sanh-logo-60px.png', 'w_128'); ?>" alt="SANH logo" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 object-contain">
                     </div>
                     <div>
                         <h5 class="font-bold text-white"><?php echo t('testimonial_1_author', $lang); ?></h5>
@@ -107,7 +107,7 @@ require_once __DIR__ . '/includes/header.php';
                 <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_2', $lang); ?></h4>
                 <div class="flex items-center">
                     <div class="mr-4">
-                        <img src="<?php echo asset('img/testimonials/mario-poljak-o-jacaoni.jpg'); ?>" alt="Mario Poljak" class="w-16 h-16 rounded-full object-cover">
+                        <img src="<?php echo img_url('img/testimonials/mario-poljak-o-jacaoni.jpg', 'w_128,c_fill,ar_1:1'); ?>" alt="Mario Poljak" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 rounded-full object-cover">
                     </div>
                     <div>
                         <h5 class="font-bold text-white"><?php echo t('testimonial_2_author', $lang); ?></h5>
@@ -127,7 +127,7 @@ require_once __DIR__ . '/includes/header.php';
                 <h4 class="text-xl font-semibold mb-4 text-white"><?php echo t('testimonial_3', $lang); ?></h4>
                 <div class="flex items-center">
                     <div class="mr-4">
-                        <img src="<?php echo asset('img/testimonials/3b-ju-jitsu-logo.png'); ?>" alt="3B Ju-Jitsu logo" class="w-16 h-16 object-contain">
+                        <img src="<?php echo img_url('img/testimonials/3b-ju-jitsu-logo.png', 'w_128'); ?>" alt="3B Ju-Jitsu logo" width="64" height="64" loading="lazy" decoding="async" class="w-16 h-16 object-contain">
                     </div>
                     <div>
                         <h5 class="font-bold text-white"><?php echo t('testimonial_3_author', $lang); ?></h5>
