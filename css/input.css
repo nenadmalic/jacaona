@@ -1,29 +1,12 @@
-/* Custom CSS for Jačaona website */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Remove default margin/padding */
-html, body {
-    margin: 0;
-    padding: 0;
-    color: white;
-}
-.bg-e5,
-.hover\:bg-e5:hover {
-    background-color: #e50000;
-}
-.bg-0a0a0a {
-    background-color: #0a0a0a;
-}
-.bg-121212 {
-    background-color: #121212;
-}
-.bg-141414,
-.schedule-section {
-    background-color: #141414;
-}
+/* ===== Site CSS — source of truth. Edit here, then rebuild (see README):
+   ./tailwindcss -i css/input.css -o css/tailwind.css --minify ===== */
 
-/* Hero section - start from position 0 (only on homepage) */
-.hero-section,
-section:first-of-type:has(.hero-slide) {
+/* Hero section - starts at position 0 under the transparent header (homepage) */
+.hero-section {
     margin-top: 0 !important;
     padding-top: 0 !important;
     position: absolute !important;
@@ -34,7 +17,7 @@ section:first-of-type:has(.hero-slide) {
     z-index: 1;
 }
 
-/* Ensure header overlays the hero section */
+/* Header overlays the hero; solid on scroll */
 #main-header {
     position: sticky;
     z-index: 50;
@@ -52,10 +35,11 @@ section:not(:first-of-type) {
     z-index: 2;
 }
 
-/* Hero Slider - ensure slides are fully visible */
+/* Hero slider: stacked slides crossfade */
 .hero-slide {
     opacity: 0;
     visibility: hidden;
+    transition: opacity 0.7s ease, visibility 0.7s;
 }
 
 .hero-slide.active {
@@ -63,7 +47,11 @@ section:not(:first-of-type) {
     visibility: visible !important;
 }
 
-/* Schedule items */
+/* Schedule */
+.schedule-section {
+    background-color: #141414;
+}
+
 .schedule-item {
     text-align: center;
 }
@@ -74,13 +62,12 @@ section:not(:first-of-type) {
     border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-/* Schedule table cells - all same width */
 .schedule-section tbody td {
     width: 125px;
     text-align: center;
 }
 
-/* Gallery items */
+/* Gallery cards */
 .gallery-item {
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -95,9 +82,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Breadcrumb section styling - ensure it's not affected by hero section styles */
-section[style*="height: 300px"],
-section:first-of-type:not(.hero-section) {
+/* Breadcrumb banners (o-nama, galerija) */
+.breadcrumb-section {
     height: 300px !important;
     display: flex !important;
     align-items: center !important;
@@ -112,4 +98,3 @@ section:first-of-type:not(.hero-section) {
         display: none;
     }
 }
-

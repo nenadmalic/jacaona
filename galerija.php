@@ -90,7 +90,7 @@ $gallery_items = [
 ?>
 
 <!-- Breadcrumb Section -->
-<section class="bg-cover bg-center bg-no-repeat relative flex items-center justify-center" 
+<section class="breadcrumb-section bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
          style="background-image: url('<?php echo asset('img/galerija-jiu-jitsu-pocetak-treninga.jpg'); ?>'); height: 300px;">
     <div class="absolute inset-0"></div>
     <div class="container mx-auto px-4 relative z-10">

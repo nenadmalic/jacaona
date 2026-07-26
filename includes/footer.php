@@ -133,7 +133,7 @@
     </footer>
     
     <!-- Main JavaScript -->
-    <script src="<?php echo asset('js/main.js'); ?>"></script>
+    <script src="<?php echo asset('js/main.js', true); ?>"></script>
 </body>
 </html>
 

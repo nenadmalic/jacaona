@@ -36,29 +36,12 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <link rel="manifest" href="<?php echo asset('img/favicon/site.webmanifest'); ?>">
     
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'zagreb-blue': '#0066CC',
-                        'e5': '#e50000',
-                    },
-                    fontFamily: {
-                        'sans': ['Nunito Sans', 'sans-serif'],
-                        'display': ['Oswald', 'sans-serif'],
-                    },
-                },
-            },
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php echo asset('css/custom.css'); ?>">
+
+    <!-- Styles (built via Tailwind standalone CLI — see README) -->
+    <link rel="stylesheet" href="<?php echo asset('css/tailwind.css', true); ?>">
 </head>
 <body class="font-sans antialiased text-white bg-0a0a0a">
            <!-- Header -->
