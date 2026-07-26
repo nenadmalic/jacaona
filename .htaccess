@@ -59,6 +59,7 @@ RedirectMatch 404 ^/\.git
 # Browser caching
 <IfModule mod_expires.c>
   ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
   ExpiresByType image/jpeg "access plus 6 months"
   ExpiresByType image/png "access plus 6 months"
   ExpiresByType image/webp "access plus 6 months"

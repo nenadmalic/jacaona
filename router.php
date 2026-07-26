@@ -48,6 +48,7 @@ $pages = [
 ];
 
 if (array_key_exists($slug, $pages)) {
+    header('Cache-Control: no-store');
     require __DIR__ . '/' . $pages[$slug];
     return true;
 }

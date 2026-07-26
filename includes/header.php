@@ -148,11 +148,11 @@ $page_description = $page_description ?? t('meta_description', $lang);
                 <!-- Language Switcher -->
                 <div class="flex items-center space-x-2">
                     <a href="<?php echo url($current_page ?? '', 'hr'); ?>" 
-                       class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'hr' ? 'bg-blue-600 text-white' : 'text-white hover:bg-gray-800'; ?>">
+                       class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'hr' ? 'bg-e5 text-white' : 'text-white hover:bg-gray-800'; ?>">
                         HR
                     </a>
                     <a href="<?php echo url($current_page ?? '', 'en'); ?>" 
-                       class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'en' ? 'bg-blue-600 text-white' : 'text-white hover:bg-gray-800'; ?>">
+                       class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'en' ? 'bg-e5 text-white' : 'text-white hover:bg-gray-800'; ?>">
                         EN
                     </a>
                 </div>
