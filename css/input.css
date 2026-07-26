@@ -89,6 +89,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Footer: Navigacija & Sekcije wrap horizontally on mobile, with interpunct
+   separators between items (vertical lists return at the md breakpoint) */
+@media (max-width: 767.98px) {
+    .footer-inline-list li:not(:last-child)::after {
+        content: "·";
+        margin-left: 1rem;
+        color: rgba(175, 180, 191, 0.6);
+    }
+}
+
 /* Breadcrumb banners (o-nama, galerija) */
 .breadcrumb-section {
     height: 300px !important;

@@ -42,8 +42,8 @@
                 
                 <!-- Navigation -->
                 <div class="lg:col-span-2 lg:col-start-5">
-                    <h2 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_nav', $lang); ?></h2>
-                    <ul class="space-y-5">
+                    <h2 class="font-display text-xl font-medium uppercase text-white mb-4 md:mb-10"><?php echo t('footer_nav', $lang); ?></h2>
+                    <ul class="footer-inline-list flex flex-wrap gap-x-4 gap-y-2 md:block md:space-y-5">
                         <li><a href="<?php echo url('', $lang); ?>" class="uppercase text-white hover:text-e5 transition-colors"><?php echo t('nav_home', $lang); ?></a></li>
                         <li><a href="<?php echo url('o-nama', $lang); ?>" class="uppercase text-white hover:text-e5 transition-colors"><?php echo t('nav_about', $lang); ?></a></li>
                         <li><a href="<?php echo url('galerija', $lang); ?>" class="uppercase text-white hover:text-e5 transition-colors"><?php echo t('nav_gallery', $lang); ?></a></li>
@@ -53,8 +53,8 @@
 
                 <!-- Sections -->
                 <div class="lg:col-span-3">
-                    <h2 class="font-display text-xl font-medium uppercase text-white mb-10"><?php echo t('footer_sections', $lang); ?></h2>
-                    <ul class="space-y-[22px] font-display font-medium text-white">
+                    <h2 class="font-display text-xl font-medium uppercase text-white mb-4 md:mb-10"><?php echo t('footer_sections', $lang); ?></h2>
+                    <ul class="footer-inline-list flex flex-wrap gap-x-4 gap-y-2 md:block md:space-y-[22px] font-display font-medium text-white">
                         <li><?php echo t('section_gts', $lang); ?></li>
                         <li><?php echo t('section_contm', $lang); ?></li>
                         <li><?php echo t('section_ogym', $lang); ?></li>
