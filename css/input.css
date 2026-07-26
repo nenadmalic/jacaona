@@ -47,9 +47,16 @@ section:not(:first-of-type) {
     visibility: visible !important;
 }
 
-/* Schedule */
+/* Schedule: fixed layout — the time column gets 90px, the 7 day columns
+   share the rest equally at every viewport width (wrapper scrolls when narrow) */
 .schedule-section {
     background-color: #141414;
+    table-layout: fixed;
+    min-width: 1000px;
+}
+
+.schedule-section thead th:first-child {
+    width: 90px;
 }
 
 .schedule-item {
@@ -64,7 +71,6 @@ section:not(:first-of-type) {
 
 .schedule-section tbody td,
 .schedule-section tbody th {
-    width: 125px;
     text-align: center;
 }
 
