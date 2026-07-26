@@ -147,13 +147,13 @@ $page_description = $page_description ?? t('meta_description', $lang);
                 
                 <!-- Language Switcher -->
                 <div class="flex items-center space-x-2">
-                    <a href="<?php echo url($current_page ?? '', 'hr'); ?>" 
+                    <a href="<?php echo url($current_page ?? '', 'hr'); ?>" hreflang="hr" aria-label="Hrvatski"
                        class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'hr' ? 'bg-e5 text-white' : 'text-white hover:bg-gray-800'; ?>">
-                        HR
+                        <abbr title="Hrvatski" lang="hr" class="no-underline">HR</abbr>
                     </a>
-                    <a href="<?php echo url($current_page ?? '', 'en'); ?>" 
+                    <a href="<?php echo url($current_page ?? '', 'en'); ?>" hreflang="en" aria-label="English"
                        class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'en' ? 'bg-e5 text-white' : 'text-white hover:bg-gray-800'; ?>">
-                        EN
+                        <abbr title="English" lang="en" class="no-underline">EN</abbr>
                     </a>
                 </div>
                 
