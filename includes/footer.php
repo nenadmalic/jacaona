@@ -6,9 +6,9 @@
                 <div>
                     <div class="mb-4">
                         <a href="<?php echo url('', $lang); ?>">
-                            <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>" 
-                                 alt="Jačaona logo" 
-                                 class="h-12 w-auto brightness-0 invert">
+                            <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>"
+                                 alt="Jačaona logo"
+                                 class="h-12 w-auto">
                         </a>
                     </div>
                     <p class="text-sm mb-4"><?php echo t('footer_tagline', $lang); ?></p>
@@ -74,7 +74,7 @@
                                 </svg>
                                 <div>
                                     <span class="block"><?php echo t('contact_whatsapp', $lang); ?></span>
-                                    <a href="https://wa.me/385915050644" class="hover:text-white transition-colors">+385 91 5050 644</a>
+                                    <a href="https://wa.me/385915050644" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">+385 91 5050 644</a>
                                     <span class="block text-xs"><?php echo t('contact_fastest_response', $lang); ?></span>
                                 </div>
                             </div>
@@ -107,7 +107,6 @@
                     </ul>
                     <p class="text-xs mt-4 text-gray-500">
                         <?php echo t('footer_copyright', $lang); ?> &copy; <?php echo date('Y'); ?> <?php echo t('footer_rights', $lang); ?><br>
-                        <?php echo t('footer_developed', $lang); ?> <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer" class="hover:text-white"><?php echo t('footer_template', $lang); ?></a><br>
                         <?php echo t('footer_credits', $lang); ?>
                     </p>
                 </div>

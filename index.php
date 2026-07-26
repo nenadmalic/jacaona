@@ -11,7 +11,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Hero Section with simple CSS slider -->
 <section class="hero-section relative h-screen overflow-hidden" style="margin-top: 0; padding-top: 0;">
-    <div id="hero-slider" class="relative h-full">
+    <div id="hero-slider" class="relative h-full" role="region" aria-roledescription="carousel" aria-label="Jačaona">
         <!-- Slide 1 -->
         <div class="hero-slide active absolute inset-0 bg-cover bg-center bg-no-repeat" 
              style="background-image: url('<?php echo asset('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d.jpg'); ?>');">
@@ -46,11 +46,39 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </div>
     
+    <!-- Slider Arrows -->
+    <button id="hero-prev" type="button"
+            class="absolute left-4 md:left-[75px] top-1/2 -translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
+            aria-label="<?php echo t('hero_prev', $lang); ?>">
+        <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+        </svg>
+    </button>
+    <button id="hero-next" type="button"
+            class="absolute right-4 md:right-[75px] top-1/2 -translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
+            aria-label="<?php echo t('hero_next', $lang); ?>">
+        <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
+        </svg>
+    </button>
+
     <!-- Slider Controls -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
-        <button class="hero-dot active w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="0"></button>
-        <button class="hero-dot w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="1"></button>
-        <button class="hero-dot w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="2"></button>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center space-x-2">
+        <button type="button" class="hero-dot active w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="0" aria-label="<?php echo t('hero_goto', $lang); ?> 1"></button>
+        <button type="button" class="hero-dot w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="1" aria-label="<?php echo t('hero_goto', $lang); ?> 2"></button>
+        <button type="button" class="hero-dot w-3 h-3 rounded-full bg-white opacity-75 hover:opacity-100 transition-opacity" data-slide="2" aria-label="<?php echo t('hero_goto', $lang); ?> 3"></button>
+        <button id="hero-pause" type="button"
+                class="!ml-4 text-white opacity-75 hover:opacity-100 transition-opacity"
+                aria-label="<?php echo t('hero_pause', $lang); ?>"
+                data-label-pause="<?php echo t('hero_pause', $lang); ?>"
+                data-label-play="<?php echo t('hero_play', $lang); ?>">
+            <svg class="icon-pause w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5 3.5h3v13H5zM12 3.5h3v13h-3z"/>
+            </svg>
+            <svg class="icon-play w-4 h-4 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M6 3.5l10 6.5-10 6.5z"/>
+            </svg>
+        </button>
     </div>
 </section>
 
@@ -106,8 +134,9 @@ require_once __DIR__ . '/includes/header.php';
                 <p class="text-gray-300"><?php echo t('about_text_3', $lang); ?></p>
             </div>
             <div>
-                <img src="https://zgeyxtyveccylltwsgsf.supabase.co/storage/v1/object/public/img/dizanje-utega-13b.jpeg" 
-                     alt="Trening" 
+                <img src="<?php echo img_url('img/dizanje-utega-13b.jpeg', 'w_1200'); ?>"
+                     alt="<?php echo htmlspecialchars(t('about_img_alt', $lang)); ?>"
+                     width="1200" height="1200" loading="lazy" decoding="async"
                      class="rounded-lg shadow-lg w-full">
             </div>
         </div>
@@ -117,13 +146,12 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Booking Section -->
 <section class="py-20 bg-cover bg-center bg-no-repeat relative" 
          style="background-image: url('<?php echo asset('img/classes-title-bg2.jpg'); ?>');">
-    <div class="absolute inset-0"></div>
+    <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white max-w-3xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display"><?php echo mb_strtoupper(t('booking_title', $lang), 'UTF-8'); ?></h2>
-            <p class="text-lg mb-4">
-                <b><?php echo t('booking_text_1', $lang); ?></b> <?php echo t('booking_text_2', $lang); ?>
-            </p>
+            <p class="text-lg mb-4 font-bold"><?php echo t('booking_text_1', $lang); ?></p>
+            <p class="text-lg mb-4"><?php echo t('booking_text_2', $lang); ?></p>
             <p class="text-lg"><?php echo t('booking_text_3', $lang); ?></p>
         </div>
     </div>

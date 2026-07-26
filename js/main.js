@@ -4,40 +4,88 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hero Slider
     const heroSlides = document.querySelectorAll('.hero-slide');
     const heroDots = document.querySelectorAll('.hero-dot');
+    const heroPrev = document.getElementById('hero-prev');
+    const heroNext = document.getElementById('hero-next');
+    const heroPause = document.getElementById('hero-pause');
     let currentSlide = 0;
-    
+    let sliderInterval = null;
+    let sliderPlaying = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     function showSlide(index) {
         heroSlides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
+            slide.classList.toggle('active', i === index);
         });
-        
+
         heroDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
             if (i === index) {
-                dot.classList.add('active');
+                dot.setAttribute('aria-current', 'true');
             } else {
-                dot.classList.remove('active');
+                dot.removeAttribute('aria-current');
             }
         });
     }
-    
+
     function nextSlide() {
         currentSlide = (currentSlide + 1) % heroSlides.length;
         showSlide(currentSlide);
     }
-    
-    // Auto-advance slides every 5 seconds
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + heroSlides.length) % heroSlides.length;
+        showSlide(currentSlide);
+    }
+
+    function stopAuto() {
+        if (sliderInterval) {
+            clearInterval(sliderInterval);
+            sliderInterval = null;
+        }
+    }
+
+    function startAuto() {
+        stopAuto();
+        sliderInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Manual navigation restarts the timer so the next auto-advance
+    // doesn't fire right after a click
+    function restartAuto() {
+        if (sliderPlaying) startAuto();
+    }
+
+    function updatePauseButton() {
+        if (!heroPause) return;
+        heroPause.setAttribute('aria-label', sliderPlaying
+            ? (heroPause.dataset.labelPause || 'Pause')
+            : (heroPause.dataset.labelPlay || 'Play'));
+        const pauseIcon = heroPause.querySelector('.icon-pause');
+        const playIcon = heroPause.querySelector('.icon-play');
+        if (pauseIcon && playIcon) {
+            pauseIcon.classList.toggle('hidden', !sliderPlaying);
+            playIcon.classList.toggle('hidden', sliderPlaying);
+        }
+    }
+
     if (heroSlides.length > 0) {
-        setInterval(nextSlide, 5000);
-        
-        // Dot navigation
+        if (sliderPlaying) startAuto();
+        updatePauseButton();
+
         heroDots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentSlide = index;
                 showSlide(currentSlide);
+                restartAuto();
             });
+        });
+
+        if (heroPrev) heroPrev.addEventListener('click', () => { prevSlide(); restartAuto(); });
+        if (heroNext) heroNext.addEventListener('click', () => { nextSlide(); restartAuto(); });
+
+        if (heroPause) heroPause.addEventListener('click', () => {
+            sliderPlaying = !sliderPlaying;
+            if (sliderPlaying) startAuto(); else stopAuto();
+            updatePauseButton();
         });
     }
     
