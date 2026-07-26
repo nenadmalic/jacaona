@@ -4,8 +4,10 @@ vendor/
 
 # Directories
 old/
-img/
 site-performance/
+
+# Tailwind standalone CLI binary (see README)
+/tailwindcss
 
 # OS
 .DS_Store
