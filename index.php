@@ -18,7 +18,7 @@ require_once __DIR__ . '/includes/header.php';
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <h1 class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</h1>
-                    <h2 class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_1', $lang); ?></h2>
+                    <p class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_1', $lang); ?></p>
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@ require_once __DIR__ . '/includes/header.php';
              style="background-image: url('<?php echo asset('img/hero-slider/hero-1b.jpg'); ?>');">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</h1>
-                    <h2 class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_2', $lang); ?></h2>
+                    <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
+                    <p class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_2', $lang); ?></p>
                 </div>
             </div>
         </div>
@@ -39,8 +39,8 @@ require_once __DIR__ . '/includes/header.php';
              style="background-image: url('<?php echo asset('img/hero-slider/hero-3b.jpg'); ?>');">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</h1>
-                    <h2 class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_3', $lang); ?></h2>
+                    <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
+                    <p class="text-2xl md:text-4xl font-display"><?php echo t('home_hero_3', $lang); ?></p>
                 </div>
             </div>
         </div>
@@ -198,52 +198,52 @@ require_once __DIR__ . '/includes/header.php';
             <table class="w-full border-collapse schedule-section">
                 <thead>
                     <tr>
-                        <th class="border border-gray-300 px-4 py-3 text-left"></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_monday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_tuesday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_wednesday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_thursday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_friday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_saturday', $lang); ?></th>
-                        <th class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_sunday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-left"><span class="sr-only"><?php echo t('schedule_time_col', $lang); ?></span></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_monday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_tuesday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_wednesday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_thursday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_friday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_saturday', $lang); ?></th>
+                        <th scope="col" class="border border-gray-300 px-4 py-3 text-center"><?php echo t('day_sunday', $lang); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- 8:30 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">8.30</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">8.30</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">8.30 - 9.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">8.30.00 - 11.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">8.30.00 - 11.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
                         </td>
                     </tr>
                     <!-- 11:00 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">11.00</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">11.00</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -251,36 +251,36 @@ require_once __DIR__ . '/includes/header.php';
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">11.00 - 12.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">11.00 - 12.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                     </tr>
                     
                     <!-- 15:00 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">15.00</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">15.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="contm">
                             <span class="text-sm">15.00 - 16.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="kvir">
                             <span class="text-sm">15.00 - 16.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_kvir', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_kvir', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="contm">
                             <span class="text-sm">15.00 - 16.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="kvir">
                             <span class="text-sm">15.00 - 16.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_kvir', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_kvir', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="contm">
                             <span class="text-sm">15.00 - 16.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_contm', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -288,16 +288,16 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 16:30 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">16.30</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">16.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">16.30 - 17.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">16.30 - 17.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -306,20 +306,20 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 17:00 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">17.00</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">17.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">17.00 - 19.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">17.00 - 19.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ogym">
                             <span class="text-sm">17.00 - 19.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ogym', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -327,16 +327,16 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 17:30 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">17.30</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">17.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ona">
                             <span class="text-sm">17.30 - 18.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ona', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ona', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ona">
                             <span class="text-sm">17.30 - 18.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ona', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ona', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -345,20 +345,20 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 19:00 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">19.00</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">19.00</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">19.00 - 20.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">19.00 - 20.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="gts">
                             <span class="text-sm">19.00 - 20.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_gts', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -366,39 +366,39 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 20:00 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">20.00</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.00</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="wchun">
                             <span class="text-sm">20.00 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="wchun">
                             <span class="text-sm">20.00 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="wchun">
                             <span class="text-sm">20.00 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="wchun">
                             <span class="text-sm">20.00 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_wchun', $lang); ?></span>
                         </td>
                     </tr>
                     
                     <!-- 20:15 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">20.15</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.15</th>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ftren">
                             <span class="text-sm">20.15 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ftren', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ftren', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="ftren">
                             <span class="text-sm">20.15 - 21.30</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_ftren', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_ftren', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -408,14 +408,14 @@ require_once __DIR__ . '/includes/header.php';
                     
                     <!-- 20:30 -->
                     <tr>
-                        <td class="border border-gray-300 px-4 py-3 font-bold">20.30</td>
+                        <th scope="row" class="border border-gray-300 px-4 py-3 font-bold text-left">20.30</th>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3 schedule-item" data-category="crobran">
                             <span class="text-sm">20.30 - 22.00</span>
-                            <h6 class="font-bold text-e5"><?php echo t('schedule_crobran', $lang); ?></h6>
+                            <span class="block font-bold text-e5"><?php echo t('schedule_crobran', $lang); ?></span>
                         </td>
                         <td class="border border-gray-300 px-4 py-3"></td>
                         <td class="border border-gray-300 px-4 py-3"></td>
@@ -428,15 +428,16 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Map Section -->
 <div class="relative h-[590px]">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.450142695802!2d15.962028076814342!3d45.806464971081645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1743364661029!5m2!1sen!2shr" 
-            class="w-full h-full border-0" 
-            allowfullscreen="" 
-            loading="lazy" 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.450142695802!2d15.962028076814342!3d45.806464971081645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1743364661029!5m2!1sen!2shr"
+            class="w-full h-full border-0"
+            title="<?php echo htmlspecialchars(t('map_title', $lang)); ?>"
+            allowfullscreen=""
+            loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-    
-    <div class="absolute top-[12%] right-[6%] bg-white p-6 rounded-lg shadow-lg w-[420px] text-black">
-        <h5 class="text-lg font-bold mb-4 text-black"><?php echo t('contact_org_name', $lang); ?></h5>
+
+    <div class="absolute top-[12%] right-[6%] bg-white p-6 rounded-lg shadow-lg w-[420px] max-w-[calc(100vw-2rem)] text-black">
+        <p class="text-lg font-bold mb-4 text-black"><?php echo t('contact_org_name', $lang); ?></p>
         <dl class="space-y-2 text-sm text-black">
             <div class="flex">
                 <dt class="font-semibold text-black"><?php echo t('contact_location', $lang); ?>:</dt>

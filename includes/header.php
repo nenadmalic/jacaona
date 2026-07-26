@@ -121,7 +121,8 @@ $page_description = $page_description ?? t('meta_description', $lang);
 <?php endif; ?>
 </head>
 <body class="font-sans antialiased text-white bg-0a0a0a">
-           <!-- Header -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded"><?php echo t('skip_to_content', $lang); ?></a>
+    <!-- Header -->
            <header id="main-header" class="bg-transparent shadow-sm sticky top-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
@@ -150,8 +151,10 @@ $page_description = $page_description ?? t('meta_description', $lang);
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-gray-300" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-white hover:text-gray-300"
+                        aria-label="<?php echo htmlspecialchars(t('menu_toggle', $lang)); ?>"
+                        aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
@@ -170,7 +173,10 @@ $page_description = $page_description ?? t('meta_description', $lang);
             const menu = document.getElementById('mobile-menu');
             if (menu) {
                 menu.classList.toggle('hidden');
+                this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
             }
         });
     </script>
+
+    <main id="main">
 

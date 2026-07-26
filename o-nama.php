@@ -15,7 +15,7 @@ require_once __DIR__ . '/includes/header.php';
     <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-white text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display"><?php echo t('about_breadcrumb', $lang); ?></h2>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display"><?php echo t('about_breadcrumb', $lang); ?></h1>
             <div class="flex items-center justify-center space-x-2 text-sm">
                 <a href="<?php echo url('', $lang); ?>" class="hover:underline">
                     <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

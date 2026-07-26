@@ -8,7 +8,7 @@ $page_description = t('gallery_meta_description', $lang);
 
 require_once __DIR__ . '/includes/header.php';
 
-// Gallery items - extracted from old/galerija.html
+// Gallery items
 $gallery_items = [
     // Jiu-Jitsu
     ['img' => 'img/gallery/jiu-jitsu-2-kraj-treninga-2020.jpeg', 'title' => 'Gostovanje Judo crnih pojaseva', 'categories' => 'jiujitsu'],
@@ -95,7 +95,7 @@ $gallery_items = [
     <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-white text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display"><?php echo t('gallery_breadcrumb', $lang); ?></h2>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display"><?php echo t('gallery_breadcrumb', $lang); ?></h1>
             <div class="flex items-center justify-center space-x-2 text-sm">
                 <a href="<?php echo url('', $lang); ?>" class="hover:underline">
                     <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,23 +161,19 @@ $gallery_items = [
         
         <!-- Gallery Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <?php 
-            // This is a simplified version - you should add all your gallery items from the old HTML
-            // For now, showing a few examples. You'll need to extract all gallery items from old/galerija.html
-            foreach ($gallery_items as $item): 
-            ?>
-                <div class="gallery-item bg-141414 rounded-lg shadow-md overflow-hidden" data-categories="<?php echo $item['categories']; ?>">
-                    <img src="<?php echo asset($item['img']); ?>" 
-                         alt="<?php echo htmlspecialchars($item['title']); ?>" 
-                         class="w-full h-64 object-cover cursor-pointer gallery-lightbox-trigger">
+            <?php foreach ($gallery_items as $item): ?>
+                <div class="gallery-item bg-141414 rounded-lg shadow-md overflow-hidden" data-categories="<?php echo htmlspecialchars($item['categories']); ?>">
+                    <a href="<?php echo img_url($item['img'], 'w_1600,c_limit'); ?>" class="gallery-lightbox-trigger block cursor-pointer">
+                        <img src="<?php echo img_url($item['img'], 'w_800'); ?>"
+                             alt="<?php echo htmlspecialchars($item['title']); ?>"
+                             loading="lazy" decoding="async"
+                             class="w-full h-64 object-cover">
+                    </a>
                     <div class="p-4">
-                        <h6 class="font-semibold text-white"><?php echo htmlspecialchars($item['title']); ?></h6>
+                        <p class="font-semibold text-white"><?php echo htmlspecialchars($item['title']); ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
-            
-            <!-- Note: You'll need to add all gallery items from old/galerija.html here -->
-            <!-- For now, this is a template structure -->
         </div>
     </div>
 </section>

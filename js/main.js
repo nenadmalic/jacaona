@@ -177,50 +177,62 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Simple Image Lightbox
-    const galleryImages = document.querySelectorAll('.gallery-item img, .gallery-lightbox-trigger');
-    
-    galleryImages.forEach(img => {
-        img.addEventListener('click', function(e) {
+    // Image lightbox (gallery)
+    const I18N = window.JACAONA_I18N || {};
+    const lightboxTriggers = document.querySelectorAll('.gallery-lightbox-trigger');
+
+    lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
             e.preventDefault();
-            const imgSrc = this.src || this.href;
-            
-            // Create modal
+            const imgSrc = this.href || this.src;
+            const triggerImg = this.querySelector('img');
+            const imgAlt = (triggerImg && triggerImg.alt) || this.alt || '';
+
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4';
+            modal.setAttribute('role', 'dialog');
+            modal.setAttribute('aria-modal', 'true');
+            modal.setAttribute('aria-label', I18N.lightboxLabel || 'Enlarged photo');
             modal.innerHTML = `
                 <div class="relative max-w-7xl max-h-full">
-                    <img src="${imgSrc}" class="max-w-full max-h-[90vh] object-contain mx-auto" alt="Gallery image">
-                    <button class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 transition-colors" aria-label="Close">
+                    <img src="${imgSrc}" class="max-w-full max-h-[90vh] object-contain mx-auto" alt="">
+                    <button type="button" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 transition-colors" aria-label="${I18N.lightboxClose || 'Close'}">
                         &times;
                     </button>
                 </div>
             `;
-            
+            modal.querySelector('img').alt = imgAlt;
+
             document.body.appendChild(modal);
             document.body.style.overflow = 'hidden';
-            
-            // Close handlers
+
+            const closeBtn = modal.querySelector('button');
+            closeBtn.focus();
+
             const closeModal = () => {
                 modal.remove();
                 document.body.style.overflow = '';
+                document.removeEventListener('keydown', keyHandler);
+                trigger.focus();
             };
-            
-            modal.querySelector('button').addEventListener('click', closeModal);
+
+            closeBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     closeModal();
                 }
             });
-            
-            // ESC key to close
-            const escHandler = (e) => {
+
+            // ESC closes; Tab stays on the close button (the only focusable element)
+            const keyHandler = (e) => {
                 if (e.key === 'Escape') {
                     closeModal();
-                    document.removeEventListener('keydown', escHandler);
+                } else if (e.key === 'Tab') {
+                    e.preventDefault();
+                    closeBtn.focus();
                 }
             };
-            document.addEventListener('keydown', escHandler);
+            document.addEventListener('keydown', keyHandler);
         });
     });
     

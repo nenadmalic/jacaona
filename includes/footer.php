@@ -1,3 +1,5 @@
+    </main>
+
     <!-- Footer -->
     <footer class="bg-[#151515] text-[#afb4bf] pt-[72px]">
         <div class="container mx-auto px-4 pb-12">
@@ -133,6 +135,7 @@
     </footer>
     
     <!-- Main JavaScript -->
+    <script>window.JACAONA_I18N = <?php echo json_encode(['lightboxClose' => t('lightbox_close', $lang), 'lightboxLabel' => t('lightbox_label', $lang)], JSON_UNESCAPED_UNICODE); ?>;</script>
     <script src="<?php echo asset('js/main.js', true); ?>"></script>
 </body>
 </html>
