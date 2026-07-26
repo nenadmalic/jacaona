@@ -1,61 +1,88 @@
 <?php
 /**
- * Site configuration and language detection
+ * Site configuration, routing helpers and language detection
  */
 
-// Detect language from URL or default to Croatian
-$lang = 'hr';
-if (isset($_GET['lang']) && in_array($_GET['lang'], ['hr', 'en'])) {
-    $lang = $_GET['lang'];
-} elseif (isset($_SERVER['REQUEST_URI'])) {
-    if (strpos($_SERVER['REQUEST_URI'], '/en/') !== false || strpos($_SERVER['REQUEST_URI'], '/en') !== false) {
-        $lang = 'en';
-    }
-}
+define('SITE_URL', 'https://www.jacaona.com');
 
-// Base URL for assets (adjust for your setup)
+// Cloudinary cloud name for photo delivery (f_auto/q_auto CDN).
+// Leave empty to serve all images from this server (local fallback).
+define('CLOUDINARY_CLOUD', '');
+
+// Language is determined by the URL path alone: /en and /en/... are English,
+// everything else is Croatian. Anchored so paths like /enduro stay Croatian.
+$request_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+$lang = preg_match('#^/en(/|$)#', $request_path) ? 'en' : 'hr';
+
+// Base URL for assets
 $base_url = '/';
-$lang_prefix = $lang === 'hr' ? '' : '/' . $lang;
 
 // Load translations
 require_once __DIR__ . '/translations.php';
 
 /**
- * Generate URL with language prefix
- * @param string $path Page path (e.g., 'o-nama', 'kontakt')
+ * Clean extensionless URL for a page slug.
+ * @param string $path Page slug ('', 'o-nama', 'galerija', 'kontakt')
  * @param string|null $lang Language code (null = current language)
- * @return string Full URL path
+ * @return string Root-relative URL ('/', '/kontakt', '/en/', '/en/kontakt')
  */
 function url($path = '', $lang = null) {
-    global $lang_prefix;
     if ($lang === null) {
         $lang = $GLOBALS['lang'];
     }
-    $prefix = $lang === 'hr' ? '' : '/' . $lang;
-    $path = ltrim($path, '/');
-    
-    // Detect if we're in development (PHP files) or production (HTML files)
-    // Check if current script is a .php file
-    $is_development = (strpos($_SERVER['PHP_SELF'] ?? '', '.php') !== false) || 
-                      (strpos($_SERVER['SCRIPT_NAME'] ?? '', '.php') !== false);
-    
-    if ($path === '') {
-        $url = $prefix === '' ? '/' : $prefix;
-        return $is_development ? ($url === '/' ? '/index.php' : $url . '/index.php') : $url;
+    $path = trim($path, '/');
+    if ($lang === 'en') {
+        return $path === '' ? '/en/' : '/en/' . $path;
     }
-    
-    $url = $prefix . '/' . $path;
-    return $is_development ? $url . '.php' : $url . '.html';
+    return $path === '' ? '/' : '/' . $path;
 }
 
 /**
- * Get asset URL
- * @param string $path Asset path relative to root
- * @return string Full asset URL
+ * Absolute canonical URL for a page. Derived from the page's own slug, never
+ * from PHP_SELF/SCRIPT_NAME (on Apache the executing script is kontakt.php
+ * but the public route is /kontakt).
+ * @param string $path Page slug
+ * @param string|null $lang Language code (null = current language)
+ * @return string Absolute URL
  */
-function asset($path) {
-    global $base_url;
-    return $base_url . ltrim($path, '/');
+function canonical_url($path = '', $lang = null) {
+    return SITE_URL . url($path, $lang);
 }
-?>
 
+/**
+ * Get asset URL.
+ * @param string $path Asset path relative to root
+ * @param bool $versioned Append ?v=<filemtime> for cache busting
+ * @return string Root-relative asset URL
+ */
+function asset($path, $versioned = false) {
+    global $base_url;
+    $path = ltrim($path, '/');
+    $url = $base_url . $path;
+    if ($versioned) {
+        $file = __DIR__ . '/../' . $path;
+        if (is_file($file)) {
+            $url .= '?v=' . filemtime($file);
+        }
+    }
+    return $url;
+}
+
+/**
+ * Photo URL, served via Cloudinary when configured (originals stay in git;
+ * Cloudinary public IDs mirror the img/ tree inside a 'jacaona' folder).
+ * Non-photos (svg, ico) and the local fallback go through asset().
+ * @param string $path Local image path (e.g. 'img/gallery/foo.jpg')
+ * @param string $transform Extra Cloudinary transforms (e.g. 'w_1600,c_limit')
+ * @return string Image URL
+ */
+function img_url($path, $transform = '') {
+    $path = ltrim($path, '/');
+    if (CLOUDINARY_CLOUD === '' || !preg_match('/\.(jpe?g|png)$/i', $path)) {
+        return asset($path);
+    }
+    $t = 'f_auto,q_auto' . ($transform !== '' ? ',' . $transform : '');
+    $public_path = preg_replace('#^img/#', '', $path);
+    $public_path = implode('/', array_map('rawurlencode', explode('/', $public_path)));
+    return 'https://res.cloudinary.com/' . CLOUDINARY_CLOUD . '/image/upload/' . $t . '/jacaona/' . $public_path;
+}

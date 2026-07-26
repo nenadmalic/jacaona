@@ -1,0 +1,71 @@
+AddDefaultCharset utf-8
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Canonical host + HTTPS
+RewriteCond %{HTTP_HOST} ^jacaona\.com$ [NC,OR]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://www.jacaona.com/$1 [R=301,L]
+
+# 301: legacy .html URLs (the v2.0 static site)
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(o-nama|galerija|kontakt)\.html$ /$1 [R=301,L]
+RewriteRule ^en/index\.html$ /en/ [R=301,L]
+RewriteRule ^en/(o-nama|galerija|kontakt)\.html$ /en/$1 [R=301,L]
+
+# 301: direct .php requests -> clean URLs (THE_REQUEST guard avoids loops
+# with the internal rewrites below)
+RewriteCond %{THE_REQUEST} \s/index\.php[?\s] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/(o-nama|galerija|kontakt)\.php[?\s] [NC]
+RewriteRule ^(o-nama|galerija|kontakt)\.php$ /$1 [R=301,L]
+
+# 301: retire the old ?lang=en convention
+RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$)
+RewriteRule ^$ /en/? [R=301,L]
+
+# Trailing-slash policy: /en/ keeps its slash, subpages have none
+RewriteRule ^en$ /en/ [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# Internal rewrites (REQUEST_URI keeps the /en prefix, which is what
+# language detection in includes/config.php reads)
+RewriteRule ^en/?$ index.php [L,QSA]
+RewriteRule ^en/(o-nama|galerija|kontakt)$ $1.php [L,QSA]
+RewriteRule ^(o-nama|galerija|kontakt)$ $1.php [L,QSA]
+</IfModule>
+
+# Never serve internals
+RedirectMatch 404 ^/includes(/|$)
+RedirectMatch 404 ^/old(/|$)
+RedirectMatch 404 ^/site-performance(/|$)
+RedirectMatch 404 ^/router\.php$
+RedirectMatch 404 /\.DS_Store
+RedirectMatch 404 ^/\.git
+<FilesMatch "^\.(gitignore|cursorrules)$|\.md$">
+  Require all denied
+</FilesMatch>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml text/plain application/xml
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresDefault "access plus 1 hour"
+</IfModule>

@@ -171,8 +171,33 @@ $translations = [
         'section_kvir' => 'Kvir kolektiv',
         'section_wchun' => 'Wing Chun',
         'section_crobran' => 'Crobran',
+
+        // Page meta descriptions
+        'about_meta_description' => 'Saznajte kako Jačaona, prvi hrvatski sportski inkubator osnovan 2011., pomaže trenerima i klubovima s prostorom, opremom i znanjem u Zagrebu.',
+        'gallery_meta_description' => 'Fotogalerija Jačaone: treninzi dizanja utega, Jiu-Jitsua, grapplinga, joge i drugih sekcija u dvorani na Pierottijevoj 11 u Zagrebu.',
+        'contact_meta_description' => 'Kontaktirajte Jačaonu — WhatsApp +385 91 5050 644, info@jacaona.com. Dvorana: Pierottijeva 11, Zagreb. IBAN, OIB i registarski podaci udruge.',
+
+        // 404 page
+        '404_title' => 'Stranica nije pronađena | Jačaona',
+        '404_text' => 'Stranica nije pronađena',
+        '404_back' => 'Natrag na početnu',
+
+        // UI / accessibility strings
+        'skip_to_content' => 'Preskoči na sadržaj',
+        'menu_toggle' => 'Otvori/zatvori izbornik',
+        'hero_prev' => 'Prethodni slajd',
+        'hero_next' => 'Sljedeći slajd',
+        'hero_pause' => 'Pauziraj izmjenu slajdova',
+        'hero_play' => 'Pokreni izmjenu slajdova',
+        'hero_goto' => 'Prikaži slajd',
+        'map_title' => 'Karta lokacije Jačaone',
+        'lightbox_close' => 'Zatvori',
+        'lightbox_label' => 'Povećana fotografija',
+        'schedule_time_col' => 'Vrijeme',
+        'about_img_alt' => 'Trening dizanja utega u dvorani Jačaone',
+        'contact_h1' => 'Kontakt Jačaone',
     ],
-    
+
     'en' => [
         // Navigation
         'nav_home' => 'Home',
@@ -339,6 +364,31 @@ $translations = [
         'section_kvir' => 'Kvir kolektiv',
         'section_wchun' => 'Wing Chun',
         'section_crobran' => 'Crobran',
+
+        // Page meta descriptions
+        'about_meta_description' => 'Learn how Jačaona, the first Croatian sports incubator founded in 2011, helps coaches and clubs with space, equipment and know-how in Zagreb.',
+        'gallery_meta_description' => 'Jačaona photo gallery: weightlifting, Jiu-Jitsu, grappling, yoga and other section trainings in the hall at Pierottijeva 11, Zagreb.',
+        'contact_meta_description' => 'Contact Jačaona — WhatsApp +385 91 5050 644, info@jacaona.com. Hall: Pierottijeva 11, Zagreb. IBAN, OIB and registration details of the association.',
+
+        // 404 page
+        '404_title' => 'Page not found | Jačaona',
+        '404_text' => 'Page not found',
+        '404_back' => 'Back to home',
+
+        // UI / accessibility strings
+        'skip_to_content' => 'Skip to content',
+        'menu_toggle' => 'Toggle menu',
+        'hero_prev' => 'Previous slide',
+        'hero_next' => 'Next slide',
+        'hero_pause' => 'Pause slideshow',
+        'hero_play' => 'Play slideshow',
+        'hero_goto' => 'Show slide',
+        'map_title' => 'Map of Jačaona\'s location',
+        'lightbox_close' => 'Close',
+        'lightbox_label' => 'Enlarged photo',
+        'schedule_time_col' => 'Time',
+        'about_img_alt' => 'Weightlifting training in the Jačaona gym',
+        'contact_h1' => 'Contact Jačaona',
     ],
 ];
 
