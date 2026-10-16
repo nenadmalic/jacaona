@@ -92,7 +92,6 @@ $gallery_items = [
 <!-- Breadcrumb Section -->
 <section class="breadcrumb-section bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
          style="background-image: url('<?php echo img_url('img/galerija-jiu-jitsu-pocetak-treninga.jpg', 'w_1920'); ?>'); height: 300px;">
-    <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-white text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display"><?php echo t('gallery_breadcrumb', $lang); ?></h1>

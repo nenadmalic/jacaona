@@ -147,7 +147,6 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Booking Section -->
 <section class="py-20 bg-cover bg-center bg-no-repeat relative" 
          style="background-image: url('<?php echo img_url('img/classes-title-bg2.jpg', 'w_1920'); ?>');">
-    <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white max-w-3xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display"><?php echo mb_strtoupper(t('booking_title', $lang), 'UTF-8'); ?></h2>
