@@ -71,7 +71,8 @@ function asset($path, $versioned = false) {
 /**
  * Photo URL, served via Cloudinary when configured (originals stay in git;
  * Cloudinary public IDs mirror the img/ tree inside a 'jacaona' folder).
- * Non-photos (svg, ico) and the local fallback go through asset().
+ * Non-photos (svg, ico) and the local fallback go through asset(); locally,
+ * a .webp sibling (scripts/build-webp.sh) is served instead of the jpg/png.
  * @param string $path Local image path (e.g. 'img/gallery/foo.jpg')
  * @param string $transform Extra Cloudinary transforms (e.g. 'w_1600,c_limit')
  * @return string Image URL
@@ -79,6 +80,11 @@ function asset($path, $versioned = false) {
 function img_url($path, $transform = '') {
     $path = ltrim($path, '/');
     if (CLOUDINARY_CLOUD === '' || !preg_match('/\.(jpe?g|png)$/i', $path)) {
+        // Local delivery: prefer the WebP copy built by scripts/build-webp.sh
+        $webp = preg_replace('/\.(jpe?g|png)$/i', '.webp', $path);
+        if ($webp !== $path && is_file(__DIR__ . '/../' . $webp)) {
+            return asset($webp, true);
+        }
         return asset($path);
     }
     $t = 'f_auto,q_auto' . ($transform !== '' ? ',' . $transform : '');
