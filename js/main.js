@@ -305,7 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function loadAnalytics() {
         const id = window.JACAONA_GA4;
-        if (!id || window.gtag) return;
+        // Only on the live domain, so local and staging visits never reach GA4
+        if (!id || window.gtag || !/^(www\.)?jacaona\.com$/.test(location.hostname)) return;
         window.dataLayer = window.dataLayer || [];
         window.gtag = function() { window.dataLayer.push(arguments); };
         window.gtag('js', new Date());
@@ -332,6 +333,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.map-consent').forEach(loadMap);
         loadAnalytics();
     }
+
+    // GA4 events for contact clicks (mark whatsapp_click and email_click as key events in GA4)
+    document.addEventListener('click', e => {
+        const a = e.target.closest('a[href]');
+        if (!a || !window.gtag) return;
+        const href = a.getAttribute('href');
+        const name = /^https:\/\/wa\.me\//.test(href) ? 'whatsapp_click'
+            : href.startsWith('mailto:') ? 'email_click'
+            : href.startsWith('tel:') ? 'phone_click' : null;
+        if (name) window.gtag('event', name, { link_url: href, transport_type: 'beacon' });
+    });
 
     document.querySelectorAll('.map-consent-show').forEach(btn => {
         btn.addEventListener('click', () => loadMap(btn.closest('.map-consent')));

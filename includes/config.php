@@ -11,7 +11,7 @@ define('CLOUDINARY_CLOUD', '');
 
 // Google Analytics 4 measurement ID (G-XXXXXXXXXX). Loads only after the
 // visitor accepts cookies (js/main.js, consent). Empty = no analytics.
-define('GA4_ID', '');
+define('GA4_ID', 'G-THFJND3V6M');
 
 // Language is determined by the URL path alone: /en and /en/... are English,
 // everything else is Croatian. Anchored so paths like /enduro stay Croatian.
