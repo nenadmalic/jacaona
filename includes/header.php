@@ -55,9 +55,8 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <link rel="preconnect" href="https://res.cloudinary.com">
 <?php endif; ?>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Styles (built via Tailwind standalone CLI — see README) -->
     <link rel="stylesheet" href="<?php echo asset('css/tailwind.css', true); ?>">
