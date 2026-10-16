@@ -30,7 +30,7 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <meta property="og:url" content="<?php echo canonical_url($current_page ?? '', $lang); ?>">
     <meta property="og:title" content="<?php echo htmlspecialchars($page_title); ?>">
     <meta property="og:description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta property="og:image" content="<?php echo SITE_URL . asset('img/jacaona-website-thumbnail.jpg'); ?>">
+    <meta property="og:image" content="<?php echo SITE_URL . asset('img/jacaona-share-' . $lang . '.jpg'); ?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Jačaona - <?php echo htmlspecialchars(t('home_hero_1', $lang)); ?>">
@@ -39,7 +39,7 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo htmlspecialchars($page_title); ?>">
     <meta name="twitter:description" content="<?php echo htmlspecialchars($page_description); ?>">
-    <meta name="twitter:image" content="<?php echo SITE_URL . asset('img/jacaona-website-thumbnail.jpg'); ?>">
+    <meta name="twitter:image" content="<?php echo SITE_URL . asset('img/jacaona-share-' . $lang . '.jpg'); ?>">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo asset('img/favicon/favicon-96x96.png'); ?>" sizes="96x96">
@@ -73,7 +73,7 @@ $page_description = $page_description ?? t('meta_description', $lang);
             'description' => t('meta_description', $lang),
             'url' => SITE_URL . '/',
             'logo' => SITE_URL . asset('img/jacaona-logo-2025.svg'),
-            'image' => SITE_URL . asset('img/jacaona-website-thumbnail.jpg'),
+            'image' => SITE_URL . asset('img/jacaona-share-' . $lang . '.jpg'),
             'foundingDate' => '2011',
             'taxID' => '06688496520',
             'identifier' => ['@type' => 'PropertyValue', 'propertyID' => 'OIB', 'value' => '06688496520'],
