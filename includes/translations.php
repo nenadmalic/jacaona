@@ -194,7 +194,7 @@ $translations = [
         'schedule_time_col' => 'Vrijeme',
         'about_img_alt' => 'Trening dizanja utega u dvorani Jačaone',
         'contact_h1' => 'Kontakt Jačaone',
-        // Cookie consent + privacy (draft, awaiting review)
+        // Cookie consent + privacy page
         'consent_label' => 'Postavke kolačića',
         'consent_text' => 'Kolačiće za statistiku posjeta i Google kartu uključujemo samo ako ih prihvatite.',
         'consent_accept' => 'Prihvaćam',
@@ -399,7 +399,7 @@ $translations = [
         'schedule_time_col' => 'Time',
         'about_img_alt' => 'Weightlifting training in the Jačaona gym',
         'contact_h1' => 'Contact Jačaona',
-        // Cookie consent + privacy (draft, awaiting review)
+        // Cookie consent + privacy page
         'consent_label' => 'Cookie settings',
         'consent_text' => 'We only turn on cookies for visit statistics and the Google map if you accept them.',
         'consent_accept' => 'Accept',

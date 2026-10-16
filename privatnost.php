@@ -1,5 +1,5 @@
 <?php
-// privatnost.php - Privacy and cookies page (DRAFT: noindex and out of sitemap.xml until approved)
+// privatnost.php - Privacy and cookies page (noindex and out of sitemap.xml until published)
 require_once __DIR__ . '/includes/config.php';
 
 $current_page = 'privatnost';
