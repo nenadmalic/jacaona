@@ -194,6 +194,20 @@ $translations = [
         'schedule_time_col' => 'Vrijeme',
         'about_img_alt' => 'Trening dizanja utega u dvorani Jačaone',
         'contact_h1' => 'Kontakt Jačaone',
+        // Cookie consent + privacy (draft, awaiting review)
+        'consent_label' => 'Postavke kolačića',
+        'consent_text' => 'Kolačiće za statistiku posjeta i Google kartu uključujemo samo ako ih prihvatite.',
+        'consent_accept' => 'Prihvaćam',
+        'consent_decline' => 'Odbijam',
+        'consent_more' => 'Više o privatnosti',
+        'footer_privacy' => 'Privatnost',
+        'footer_cookie_settings' => 'Postavke kolačića',
+        'map_placeholder' => 'Karta se učitava s Google Mapsa, koji pritom postavlja svoje kolačiće.',
+        'map_show' => 'Prikaži kartu',
+        'map_open' => 'Otvori u Google Mapsu',
+        'privacy_title' => 'Privatnost i kolačići | Jačaona - Prvi hrvatski sportski inkubator',
+        'privacy_meta_description' => 'Kako Jačaona postupa s osobnim podacima i kolačićima na stranici jacaona.com: voditelj obrade, kolačići, Google Analytics, Google karta i vaša prava.',
+        'privacy_h1' => 'Privatnost i kolačići',
     ],
 
     'en' => [
@@ -385,6 +399,20 @@ $translations = [
         'schedule_time_col' => 'Time',
         'about_img_alt' => 'Weightlifting training in the Jačaona gym',
         'contact_h1' => 'Contact Jačaona',
+        // Cookie consent + privacy (draft, awaiting review)
+        'consent_label' => 'Cookie settings',
+        'consent_text' => 'We only turn on cookies for visit statistics and the Google map if you accept them.',
+        'consent_accept' => 'Accept',
+        'consent_decline' => 'Decline',
+        'consent_more' => 'Privacy details',
+        'footer_privacy' => 'Privacy',
+        'footer_cookie_settings' => 'Cookie settings',
+        'map_placeholder' => 'The map loads from Google Maps, which sets its own cookies.',
+        'map_show' => 'Show map',
+        'map_open' => 'Open in Google Maps',
+        'privacy_title' => 'Privacy and cookies | Jačaona - First Croatian Sports Incubator',
+        'privacy_meta_description' => 'How Jačaona handles personal data and cookies on jacaona.com: data controller, cookies, Google Analytics, the Google map and your rights.',
+        'privacy_h1' => 'Privacy and cookies',
     ],
 ];
 

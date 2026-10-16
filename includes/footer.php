@@ -129,12 +129,31 @@
                         <span class="text-[#4d94ff] font-semibold"><?php echo t('footer_zagreb', $lang); ?></span>
                     </p>
                     <img src="<?php echo asset('img/zagreb-coat-of-arms.svg'); ?>" alt="Grad Zagreb grb" width="356" height="426" loading="lazy" class="h-8 w-auto">
+                    <p class="text-xs text-[#afb4bf]">
+                        <a href="<?php echo url('privatnost', $lang); ?>" class="hover:text-e5 hover:underline"><?php echo t('footer_privacy', $lang); ?></a>
+                        <span aria-hidden="true">&middot;</span>
+                        <button type="button" data-consent-open class="hover:text-e5 hover:underline"><?php echo t('footer_cookie_settings', $lang); ?></button>
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
     
+    <!-- Cookie consent banner (shown by js/main.js until the visitor decides) -->
+    <div id="consent-banner" role="region" aria-label="<?php echo htmlspecialchars(t('consent_label', $lang)); ?>" hidden
+         class="fixed z-50 bottom-4 left-4 right-4 sm:right-auto sm:max-w-sm bg-0a0a0a text-white border border-[#333] p-5 shadow-lg">
+        <p class="text-sm mb-4">
+            <?php echo t('consent_text', $lang); ?>
+            <a href="<?php echo url('privatnost', $lang); ?>" class="text-white underline hover:text-e5"><?php echo t('consent_more', $lang); ?></a>
+        </p>
+        <div class="grid grid-cols-2 gap-3">
+            <button type="button" data-consent="granted" class="border border-white font-display uppercase py-2 hover:bg-e5 hover:border-e5 transition-colors"><?php echo t('consent_accept', $lang); ?></button>
+            <button type="button" data-consent="denied" class="border border-white font-display uppercase py-2 hover:bg-e5 hover:border-e5 transition-colors"><?php echo t('consent_decline', $lang); ?></button>
+        </div>
+    </div>
+
     <!-- Main JavaScript -->
+    <script>window.JACAONA_GA4 = <?php echo json_encode(GA4_ID); ?>;</script>
     <script>window.JACAONA_I18N = <?php echo json_encode(['lightboxClose' => t('lightbox_close', $lang), 'lightboxLabel' => t('lightbox_label', $lang)], JSON_UNESCAPED_UNICODE); ?>;</script>
     <script src="<?php echo asset('js/main.js', true); ?>"></script>
 </body>

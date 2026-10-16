@@ -12,13 +12,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Map Section -->
 <div class="relative h-[530px]">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.636655491703!2d15.964237153026524!3d45.806424585215936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1752521016705!5m2!1sen!2shr"
-            class="w-full h-full border-0"
-            title="<?php echo htmlspecialchars(t('map_title', $lang)); ?>"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <?php $map_embed_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.636655491703!2d15.964237153026524!3d45.806424585215936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1752521016705!5m2!1sen!2shr'; include __DIR__ . '/includes/map.php'; ?>
 </div>
 
 <!-- Contact Section -->

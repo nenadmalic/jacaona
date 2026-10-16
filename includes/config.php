@@ -9,6 +9,10 @@ define('SITE_URL', 'https://www.jacaona.com');
 // Leave empty to serve all images from this server (local fallback).
 define('CLOUDINARY_CLOUD', '');
 
+// Google Analytics 4 measurement ID (G-XXXXXXXXXX). Loads only after the
+// visitor accepts cookies (js/main.js, consent). Empty = no analytics.
+define('GA4_ID', '');
+
 // Language is determined by the URL path alone: /en and /en/... are English,
 // everything else is Croatian. Anchored so paths like /enduro stay Croatian.
 $request_path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';

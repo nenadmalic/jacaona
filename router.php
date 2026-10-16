@@ -9,7 +9,7 @@ $path = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 // 301: legacy .html URLs and direct .php requests -> clean URLs
 // (must run before the static-file check: .php files ARE files)
-if (preg_match('#^(/en)?/(index|o-nama|galerija|kontakt)\.(html|php)$#', $path, $m)) {
+if (preg_match('#^(/en)?/(index|o-nama|galerija|kontakt|privatnost)\.(html|php)$#', $path, $m)) {
     $slug = $m[2] === 'index' ? '' : $m[2];
     $target = ($m[1] !== '' ? '/en/' : '/') . $slug;
     header('Location: ' . $target, true, 301);
@@ -45,6 +45,7 @@ $pages = [
     'o-nama'   => 'o-nama.php',
     'galerija' => 'galerija.php',
     'kontakt'  => 'kontakt.php',
+    'privatnost' => 'privatnost.php',
 ];
 
 if (array_key_exists($slug, $pages)) {

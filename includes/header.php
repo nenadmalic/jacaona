@@ -54,7 +54,7 @@ $page_description = $page_description ?? t('meta_description', $lang);
 <?php if (CLOUDINARY_CLOUD !== ''): ?>
     <link rel="preconnect" href="https://res.cloudinary.com">
 <?php endif; ?>
-    <!-- Google Fonts -->
+    <!-- Fonts: self-hosted, @font-face in css/input.css -->
     <link rel="preload" href="/fonts/nunito-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/oswald-latin.woff2" as="font" type="font/woff2" crossorigin>
 

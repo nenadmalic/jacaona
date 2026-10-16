@@ -429,13 +429,7 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- Map Section -->
 <div class="relative h-[590px]">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.450142695802!2d15.962028076814342!3d45.806464971081645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1743364661029!5m2!1sen!2shr"
-            class="w-full h-full border-0"
-            title="<?php echo htmlspecialchars(t('map_title', $lang)); ?>"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <?php $map_embed_src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.450142695802!2d15.962028076814342!3d45.806464971081645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6ef802283cd%3A0xa77df4a42a455490!2zSmHEjWFvbmE!5e1!3m2!1sen!2shr!4v1743364661029!5m2!1sen!2shr'; include __DIR__ . '/includes/map.php'; ?>
 
     <div class="absolute top-[12%] right-[6%] bg-white p-6 rounded-lg shadow-lg w-[420px] max-w-[calc(100vw-2rem)] text-black">
         <p class="text-lg font-bold mb-4 text-black"><?php echo t('contact_org_name', $lang); ?></p>

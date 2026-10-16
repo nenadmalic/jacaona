@@ -21,8 +21,8 @@ RewriteRule ^en/(o-nama|galerija|kontakt)\.html$ /en/$1 [R=301,L]
 # with the internal rewrites below)
 RewriteCond %{THE_REQUEST} \s/index\.php[?\s] [NC]
 RewriteRule ^index\.php$ / [R=301,L]
-RewriteCond %{THE_REQUEST} \s/(o-nama|galerija|kontakt)\.php[?\s] [NC]
-RewriteRule ^(o-nama|galerija|kontakt)\.php$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} \s/(o-nama|galerija|kontakt|privatnost)\.php[?\s] [NC]
+RewriteRule ^(o-nama|galerija|kontakt|privatnost)\.php$ /$1 [R=301,L]
 
 # 301: retire the old ?lang=en convention
 RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$)
@@ -36,8 +36,8 @@ RewriteRule ^(.+)/$ /$1 [R=301,L]
 # Internal rewrites (REQUEST_URI keeps the /en prefix, which is what
 # language detection in includes/config.php reads)
 RewriteRule ^en/?$ index.php [L,QSA]
-RewriteRule ^en/(o-nama|galerija|kontakt)$ $1.php [L,QSA]
-RewriteRule ^(o-nama|galerija|kontakt)$ $1.php [L,QSA]
+RewriteRule ^en/(o-nama|galerija|kontakt|privatnost)$ $1.php [L,QSA]
+RewriteRule ^(o-nama|galerija|kontakt|privatnost)$ $1.php [L,QSA]
 </IfModule>
 
 # Never serve internals

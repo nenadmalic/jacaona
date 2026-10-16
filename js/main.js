@@ -275,3 +275,91 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+// Cookie consent: one first-party cookie (jacaona_consent, 180 days) stores the choice.
+// Google Analytics and the Google map load only after "Accept"; "Show map" loads one map without storing consent.
+document.addEventListener('DOMContentLoaded', function() {
+    const COOKIE = 'jacaona_consent';
+    const banner = document.getElementById('consent-banner');
+
+    function getConsent() {
+        const m = document.cookie.match(/(?:^|;\s*)jacaona_consent=(granted|denied)/);
+        return m ? m[1] : null;
+    }
+
+    function setConsent(value) {
+        const secure = location.protocol === 'https:' ? '; Secure' : '';
+        document.cookie = COOKIE + '=' + value + '; Max-Age=' + 180 * 24 * 3600 + '; Path=/; SameSite=Lax' + secure;
+    }
+
+    function loadMap(placeholder) {
+        const iframe = document.createElement('iframe');
+        iframe.src = placeholder.dataset.mapSrc;
+        iframe.title = placeholder.dataset.mapTitle;
+        iframe.className = 'absolute inset-0 w-full h-full border-0';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        placeholder.replaceWith(iframe);
+    }
+
+    function loadAnalytics() {
+        const id = window.JACAONA_GA4;
+        if (!id || window.gtag) return;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', id);
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+        document.head.appendChild(s);
+    }
+
+    function deleteAnalyticsCookies() {
+        const host = location.hostname.replace(/^www\./, '');
+        document.cookie.split(';').map(c => c.trim().split('=')[0])
+            .filter(name => /^_ga/.test(name))
+            .forEach(name => {
+                [location.hostname, '.' + host, ''].forEach(domain => {
+                    document.cookie = name + '=; Max-Age=0; Path=/' + (domain ? '; Domain=' + domain : '');
+                });
+            });
+    }
+
+    function applyConsent() {
+        if (getConsent() !== 'granted') return;
+        document.querySelectorAll('.map-consent').forEach(loadMap);
+        loadAnalytics();
+    }
+
+    document.querySelectorAll('.map-consent-show').forEach(btn => {
+        btn.addEventListener('click', () => loadMap(btn.closest('.map-consent')));
+    });
+
+    if (banner) {
+        banner.querySelectorAll('[data-consent]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const previous = getConsent();
+                setConsent(btn.dataset.consent);
+                banner.hidden = true;
+                if (btn.dataset.consent === 'granted') {
+                    applyConsent();
+                } else if (previous === 'granted') {
+                    // Withdrawn: remove analytics cookies and reload so loaded scripts and maps are gone
+                    deleteAnalyticsCookies();
+                    location.reload();
+                }
+            });
+        });
+        document.querySelectorAll('[data-consent-open]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                banner.hidden = false;
+                banner.querySelector('[data-consent]').focus();
+            });
+        });
+        if (getConsent() === null) banner.hidden = false;
+    }
+
+    applyConsent();
+});
