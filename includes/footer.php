@@ -8,7 +8,7 @@
                 <div class="lg:col-span-3">
                     <div class="mb-10">
                         <a href="<?php echo url('', $lang); ?>">
-                            <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>"
+                            <img src="<?php echo asset('img/jacaona-logo-2025.svg', true); ?>"
                                  alt="Jačaona logo"
                                  width="775" height="135" loading="lazy"
                                  class="w-[218px] max-w-full h-auto">

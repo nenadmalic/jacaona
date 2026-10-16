@@ -133,7 +133,7 @@ $page_description = $page_description ?? t('meta_description', $lang);
             <div class="flex items-center justify-between py-4">
                 <!-- Logo -->
                 <a href="<?php echo url('', $lang); ?>" class="flex items-center">
-                    <img src="<?php echo asset('img/jacaona-logo-2025.svg'); ?>"
+                    <img src="<?php echo asset('img/jacaona-logo-2025.svg', true); ?>"
                          alt="Jačaona logo"
                          width="775" height="135"
                          class="h-9 w-auto">
