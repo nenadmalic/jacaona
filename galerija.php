@@ -19,7 +19,7 @@ $gallery_items = [
     ['img' => 'img/gallery/jiu-jitsu-2-trening.jpg', 'title' => 'Sparing', 'categories' => 'jiujitsu'],
     ['img' => 'img/gallery/jiu-jitsu-7-trener-darijo-juricic-na-natjecanju.jpg', 'title' => 'Pobjeda Darija Juričića na natjecanju', 'categories' => 'jiujitsu'],
     ['img' => 'img/gallery/jiu-jitsu-8-dodjela-pojaseva-clanovima-jacaone.jpg', 'title' => 'Dodjela pojaseva članovima Jačaone', 'categories' => 'jiujitsu'],
-    ['img' => 'img/gallery/jiuu-jitsu-5-trener-darijo-juricic-zlatna-medalja.jpg', 'title' => 'Zlatna medalja trenera Jačaone', 'categories' => 'jiujitsu jacaona'],
+    ['img' => 'img/gallery/jiu-jitsu-5-trener-darijo-juricic-zlatna-medalja.jpg', 'title' => 'Zlatna medalja trenera Jačaone', 'categories' => 'jiujitsu jacaona'],
     ['img' => 'img/gallery/jiu-jitsu-6-clanovi-jacaone-na-natjecanju.jpg', 'title' => 'Članovi Jačaone na natjecanju', 'categories' => 'jiujitsu jacaona'],
     ['img' => 'img/gallery/jiu-jitsu-22.jpg', 'title' => 'Jiu-Jitsu trening', 'categories' => 'jiujitsu'],
     
@@ -30,10 +30,10 @@ $gallery_items = [
     ['img' => 'img/gallery/joga-4.jpg', 'title' => 'Poza kobre', 'categories' => 'joga'],
     
     // Jačaona
-    ['img' => 'img/gallery/jacaona-dvorana-4.jpg', 'title' => 'Fotografija Jačaone iz lipnja, 2024.', 'categories' => 'jacaona'],
-    ['img' => 'img/gallery/jacaona-dvorana-5.jpg', 'title' => 'Pogled kroz prozore Jačaone', 'categories' => 'jacaona'],
-    ['img' => 'img/gallery/jacaona-dvorana-6.jpg', 'title' => 'Fotografija Jačaone iz lipnja, 2024.', 'categories' => 'jacaona'],
-    ['img' => 'img/gallery/jacaona-dvorana-7.jpg', 'title' => 'Tatamiji i power rack', 'categories' => 'jacaona'],
+    ['img' => 'img/gallery/dvorana-za-treninge-zagreb-tatami-jacaona-pierottijeva.jpg', 'title' => 'Fotografija Jačaone iz lipnja, 2024.', 'categories' => 'jacaona'],
+    ['img' => 'img/gallery/dvorana-za-treninge-zagreb-prozori-jacaona.jpg', 'title' => 'Pogled kroz prozore Jačaone', 'categories' => 'jacaona'],
+    ['img' => 'img/gallery/prostor-za-sportski-klub-zagreb-dvorana-jacaona.jpg', 'title' => 'Fotografija Jačaone iz lipnja, 2024.', 'categories' => 'jacaona'],
+    ['img' => 'img/gallery/dvorana-za-borilacke-sportove-zagreb-tatami-i-power-rack.jpg', 'title' => 'Tatamiji i power rack', 'categories' => 'jacaona'],
     ['img' => 'img/gallery/jacaona-na-ljeto-2011.jpg', 'title' => 'Otvaranje Jačaone na ljeto 2011.', 'categories' => 'jacaona'],
     ['img' => 'img/gallery/jacaona-na-ljeto-2011-otvaranje-dvorane.jpg', 'title' => 'Otvaranje Jačaone na ljeto 2011.', 'categories' => 'jacaona'],
     ['img' => 'img/gallery/jacaona-radovi-pred-otvaranje-dvorane-2011.jpg', 'title' => 'Radovi pred otvaranje dvorane 2011.', 'categories' => 'jacaona'],

@@ -135,7 +135,7 @@ require_once __DIR__ . '/includes/header.php';
                 <p class="text-gray-300"><?php echo t('about_text_3', $lang); ?></p>
             </div>
             <div>
-                <img src="<?php echo img_url('img/dizanje-utega-13b.jpeg', 'w_1200'); ?>"
+                <img src="<?php echo img_url('img/dizanje-utega-trening-u-dvorani-jacaona-zagreb.jpeg', 'w_1200'); ?>"
                      alt="<?php echo htmlspecialchars(t('about_img_alt', $lang)); ?>"
                      width="1200" height="1200" loading="lazy" decoding="async"
                      class="rounded-lg shadow-lg w-full">
