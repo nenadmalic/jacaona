@@ -161,7 +161,7 @@ require_once __DIR__ . '/includes/header.php';
 <!-- Schedule Section -->
 <section class="py-20">
     <div class="container mx-auto px-4">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 font-display text-center"><?php echo mb_strtoupper(t('schedule_title', $lang), 'UTF-8'); ?></h2>
+        <h2 id="schedule-title" class="text-4xl md:text-5xl font-bold mb-6 font-display text-center"><?php echo mb_strtoupper(t('schedule_title', $lang), 'UTF-8'); ?></h2>
         
         <!-- Schedule Filters -->
         <div class="flex flex-wrap justify-center gap-2 mb-8">
@@ -195,7 +195,7 @@ require_once __DIR__ . '/includes/header.php';
         </div>
         
         <!-- Schedule Table -->
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto" tabindex="0" role="region" aria-labelledby="schedule-title">
             <table class="w-full border-collapse schedule-section">
                 <thead>
                     <tr>

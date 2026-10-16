@@ -182,6 +182,15 @@ $page_description = $page_description ?? t('meta_description', $lang);
                 this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
             }
         });
+        document.addEventListener('keydown', function(e) {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            if (e.key === 'Escape' && menu && btn && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                btn.focus();
+            }
+        });
     </script>
 
     <main id="main">
