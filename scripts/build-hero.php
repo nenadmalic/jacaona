@@ -10,8 +10,8 @@ $dir = __DIR__ . '/../img/hero-slider/';
 // name => [gamma (1 = unchanged), horizontal focus 0..1 for the mobile crop]
 $heroes = [
     'jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d' => [1.0, 0.5],
-    'hero-1' => [1.0, 0.45],
-    'hero-3' => [1.0, 0.62],
+    'hero-1b' => [1.0, 0.45],
+    'hero-3b' => [1.0, 0.62],
 ];
 $mobile_aspect = 0.6; // width / height of the mobile crop
 
