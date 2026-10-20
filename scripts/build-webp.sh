@@ -5,7 +5,7 @@
 # Needs cwebp (brew install webp). Only rebuilds copies older than their original.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-find img -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -not -path 'img/favicon/*' |
+find img -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -not -path 'img/favicon/*' -not -name 'jacaona-share-*' |
 while read -r src; do
     out="${src%.*}.webp"
     if [ ! -f "$out" ] || [ "$src" -nt "$out" ]; then
