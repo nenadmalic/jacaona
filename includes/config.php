@@ -15,7 +15,7 @@ define('GA4_ID', 'G-THFJND3V6M');
 
 // PostHog project API key (phc_..., public by design) and EU host. Loads only
 // after the visitor accepts cookies, like GA4. Empty key = no PostHog.
-define('POSTHOG_KEY', '');
+define('POSTHOG_KEY', 'phc_D59aw5C4gXD5GzCzFzbgpxLNDGyixx5rPC3bMao9KJ3i');
 define('POSTHOG_HOST', 'https://eu.i.posthog.com');
 
 // Language is determined by the URL path alone: /en and /en/... are English,
