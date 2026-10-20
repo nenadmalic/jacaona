@@ -48,9 +48,9 @@ $page_description = $page_description ?? t('meta_description', $lang);
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo asset('img/favicon/apple-touch-icon.png'); ?>">
     <link rel="manifest" href="<?php echo asset('img/favicon/site.webmanifest'); ?>">
     
-<?php if (!empty($preload_image)): ?>
-    <link rel="preload" as="image" href="<?php echo htmlspecialchars($preload_image); ?>">
-<?php endif; ?>
+<?php foreach ($preload_images ?? [] as $pre): ?>
+    <link rel="preload" as="image" href="<?php echo htmlspecialchars($pre['href']); ?>" media="<?php echo $pre['media']; ?>">
+<?php endforeach; ?>
 <?php if (CLOUDINARY_CLOUD !== ''): ?>
     <link rel="preconnect" href="https://res.cloudinary.com">
 <?php endif; ?>
@@ -144,8 +144,8 @@ $page_description = $page_description ?? t('meta_description', $lang);
                     <?php include __DIR__ . '/nav.php'; ?>
                 </nav>
                 
-                <!-- Language Switcher -->
-                <div class="flex items-center space-x-2">
+                <!-- Language Switcher (desktop; on phones it is inside the mobile menu) -->
+                <div class="hidden md:flex items-center space-x-2">
                     <a href="<?php echo url($current_page ?? '', 'hr'); ?>" hreflang="hr" aria-label="Hrvatski"
                        class="px-3 py-1 rounded text-sm font-medium transition-colors <?php echo $lang === 'hr' ? 'bg-e5 text-white' : 'text-white hover:bg-gray-800'; ?>">
                         <abbr title="Hrvatski" lang="hr" class="no-underline">HR</abbr>
@@ -157,40 +157,51 @@ $page_description = $page_description ?? t('meta_description', $lang);
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-white hover:text-gray-300"
-                        aria-label="<?php echo htmlspecialchars(t('menu_toggle', $lang)); ?>"
+                <button id="mobile-menu-btn" type="button" class="md:hidden flex items-center gap-2 p-2 text-white hover:text-e5"
                         aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
+                    <span class="font-display uppercase text-lg"><?php echo t('menu_label', $lang); ?></span>
                 </button>
             </div>
-            
-            <!-- Mobile Navigation -->
-            <nav id="mobile-menu" class="hidden md:hidden pb-4">
-                <?php include __DIR__ . '/nav.php'; ?>
-            </nav>
         </div>
     </header>
+    <?php include __DIR__ . '/mobile-menu.php'; ?>
     
-    <!-- Minimal JavaScript for mobile menu -->
+    <!-- Mobile menu: open/close, Esc, focus kept inside while open -->
     <script>
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+        (function() {
             const menu = document.getElementById('mobile-menu');
-            if (menu) {
-                menu.classList.toggle('hidden');
-                this.setAttribute('aria-expanded', String(!menu.classList.contains('hidden')));
+            const openBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            if (!menu || !openBtn || !closeBtn) return;
+            function open() {
+                menu.hidden = false;
+                openBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
             }
-        });
-        document.addEventListener('keydown', function(e) {
-            const menu = document.getElementById('mobile-menu');
-            const btn = document.getElementById('mobile-menu-btn');
-            if (e.key === 'Escape' && menu && btn && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-                btn.setAttribute('aria-expanded', 'false');
-                btn.focus();
+            function close() {
+                menu.hidden = true;
+                openBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+                openBtn.focus();
             }
-        });
+            openBtn.addEventListener('click', open);
+            closeBtn.addEventListener('click', close);
+            document.addEventListener('keydown', function(e) {
+                if (menu.hidden) return;
+                if (e.key === 'Escape') { close(); return; }
+                if (e.key === 'Tab') {
+                    const items = menu.querySelectorAll('a[href], button');
+                    const first = items[0], last = items[items.length - 1];
+                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+                }
+            });
+            window.matchMedia('(min-width: 768px)').addEventListener('change', function(e) { if (e.matches && !menu.hidden) close(); });
+        })();
     </script>
 
     <main id="main">

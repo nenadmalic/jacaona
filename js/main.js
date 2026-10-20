@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // competes with first paint; applied once the page has loaded
     window.addEventListener('load', () => {
         document.querySelectorAll('.hero-slide[data-bg]').forEach(slide => {
-            slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+            slide.style.setProperty('--bg', "url('" + slide.dataset.bg + "')");
+            slide.style.setProperty('--bg-m', "url('" + (slide.dataset.bgMobile || slide.dataset.bg) + "')");
+            slide.classList.add('hero-bg');
         });
     });
 

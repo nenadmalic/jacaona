@@ -183,6 +183,8 @@ $translations = [
         // UI / accessibility strings
         'skip_to_content' => 'Preskoči na sadržaj',
         'menu_toggle' => 'Otvori/zatvori izbornik',
+        'menu_label' => 'Izbornik',
+        'menu_close' => 'Zatvori izbornik',
         'hero_prev' => 'Prethodni slajd',
         'hero_next' => 'Sljedeći slajd',
         'hero_pause' => 'Pauziraj izmjenu slajdova',
@@ -388,6 +390,8 @@ $translations = [
         // UI / accessibility strings
         'skip_to_content' => 'Skip to content',
         'menu_toggle' => 'Toggle menu',
+        'menu_label' => 'Menu',
+        'menu_close' => 'Close menu',
         'hero_prev' => 'Previous slide',
         'hero_next' => 'Next slide',
         'hero_pause' => 'Pause slideshow',

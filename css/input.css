@@ -81,6 +81,17 @@ section:not(:first-of-type) {
     z-index: 2;
 }
 
+/* Hero backgrounds: portrait crop on phones, full photo from 768px */
+.hero-bg {
+    background-image: var(--bg-m);
+}
+
+@media (min-width: 768px) {
+    .hero-bg {
+        background-image: var(--bg);
+    }
+}
+
 /* Hero slider: stacked slides crossfade */
 .hero-slide {
     opacity: 0;

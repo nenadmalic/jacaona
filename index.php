@@ -5,7 +5,13 @@ require_once __DIR__ . '/includes/config.php';
 $current_page = '';
 $page_title = t('home_title', $lang);
 $page_description = t('meta_description', $lang);
-$preload_image = img_url('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d.jpg', 'w_1920');
+$hero_1 = img_url('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d.jpg', 'w_1920');
+$hero_1_mobile = img_url('img/hero-slider/jacaona-smjena-sekcija-jiu-jitsu-i-dizanje-utega-2d-mobile.jpg', 'w_800');
+// LCP image: phones preload the portrait crop, wider screens the full photo
+$preload_images = [
+    ['href' => $hero_1_mobile, 'media' => '(max-width: 767px)'],
+    ['href' => $hero_1, 'media' => '(min-width: 768px)'],
+];
 
 require_once __DIR__ . '/includes/header.php';
 ?>
@@ -14,8 +20,8 @@ require_once __DIR__ . '/includes/header.php';
 <section class="hero-section relative h-screen overflow-hidden" style="margin-top: 0; padding-top: 0;">
     <div id="hero-slider" class="relative h-full" role="region" aria-roledescription="carousel" aria-label="Jačaona">
         <!-- Slide 1 (LCP image — preloaded in the head) -->
-        <div class="hero-slide active absolute inset-0 bg-cover bg-center bg-no-repeat"
-             style="background-image: url('<?php echo $preload_image; ?>');">
+        <div class="hero-slide hero-bg active absolute inset-0 bg-cover bg-center bg-no-repeat"
+             style="--bg: url('<?php echo $hero_1; ?>'); --bg-m: url('<?php echo $hero_1_mobile; ?>');">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <h1 class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</h1>
@@ -26,7 +32,8 @@ require_once __DIR__ . '/includes/header.php';
         
         <!-- Slide 2 (background applied after window load) -->
         <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
-             data-bg="<?php echo img_url('img/hero-slider/hero-1b.jpg', 'w_1920'); ?>">
+             data-bg="<?php echo img_url('img/hero-slider/hero-1b-light.jpg', 'w_1920'); ?>"
+             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-1b-light-mobile.jpg', 'w_800'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
@@ -37,7 +44,8 @@ require_once __DIR__ . '/includes/header.php';
         
         <!-- Slide 3 (background applied after window load) -->
         <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
-             data-bg="<?php echo img_url('img/hero-slider/hero-3b.jpg', 'w_1920'); ?>">
+             data-bg="<?php echo img_url('img/hero-slider/hero-3b-light.jpg', 'w_1920'); ?>"
+             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-3b-light-mobile.jpg', 'w_800'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
@@ -49,16 +57,16 @@ require_once __DIR__ . '/includes/header.php';
     
     <!-- Slider Arrows -->
     <button id="hero-prev" type="button"
-            class="absolute left-4 md:left-[75px] top-1/2 -translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
+            class="absolute left-4 bottom-[14px] md:bottom-auto md:left-[75px] md:top-1/2 md:-translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
             aria-label="<?php echo t('hero_prev', $lang); ?>">
-        <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="w-8 h-8 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
         </svg>
     </button>
     <button id="hero-next" type="button"
-            class="absolute right-4 md:right-[75px] top-1/2 -translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
+            class="absolute right-4 bottom-[14px] md:bottom-auto md:right-[75px] md:top-1/2 md:-translate-y-1/2 z-20 p-2 text-white opacity-75 hover:opacity-100 transition-opacity"
             aria-label="<?php echo t('hero_next', $lang); ?>">
-        <svg class="w-10 h-10 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <svg class="w-8 h-8 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/>
         </svg>
     </button>
