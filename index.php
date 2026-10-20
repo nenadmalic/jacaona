@@ -32,8 +32,8 @@ require_once __DIR__ . '/includes/header.php';
         
         <!-- Slide 2 (background applied after window load) -->
         <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
-             data-bg="<?php echo img_url('img/hero-slider/hero-1b-light.jpg', 'w_1920'); ?>"
-             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-1b-light-mobile.jpg', 'w_800'); ?>">
+             data-bg="<?php echo img_url('img/hero-slider/hero-1.jpg', 'w_1920'); ?>"
+             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-1-mobile.jpg', 'w_800'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
@@ -44,8 +44,8 @@ require_once __DIR__ . '/includes/header.php';
         
         <!-- Slide 3 (background applied after window load) -->
         <div class="hero-slide absolute inset-0 bg-cover bg-center bg-no-repeat"
-             data-bg="<?php echo img_url('img/hero-slider/hero-3b-light.jpg', 'w_1920'); ?>"
-             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-3b-light-mobile.jpg', 'w_800'); ?>">
+             data-bg="<?php echo img_url('img/hero-slider/hero-3.jpg', 'w_1920'); ?>"
+             data-bg-mobile="<?php echo img_url('img/hero-slider/hero-3-mobile.jpg', 'w_800'); ?>">
             <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
                 <div class="text-white max-w-3xl text-center">
                     <p class="text-5xl md:text-7xl font-bold mb-4 font-display">JAČAONA</p>
