@@ -317,21 +317,35 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(s);
     }
 
+    function loadPostHog() {
+        const ph = window.JACAONA_POSTHOG;
+        if (!ph || window.posthog || !/^(www\.)?jacaona\.com$/.test(location.hostname)) return;
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = ph.host.replace('.i.posthog.com', '-assets.i.posthog.com') + '/static/array.full.js';
+        s.onload = () => window.posthog.init(ph.key, { api_host: ph.host, person_profiles: 'identified_only' });
+        document.head.appendChild(s);
+    }
+
     function deleteAnalyticsCookies() {
         const host = location.hostname.replace(/^www\./, '');
         document.cookie.split(';').map(c => c.trim().split('=')[0])
-            .filter(name => /^_ga/.test(name))
+            .filter(name => /^(_ga|ph_)/.test(name))
             .forEach(name => {
                 [location.hostname, '.' + host, ''].forEach(domain => {
                     document.cookie = name + '=; Max-Age=0; Path=/' + (domain ? '; Domain=' + domain : '');
                 });
             });
+        try {
+            Object.keys(localStorage).filter(k => /^ph_/.test(k)).forEach(k => localStorage.removeItem(k));
+        } catch (e) { /* storage unavailable */ }
     }
 
     function applyConsent() {
         if (getConsent() !== 'granted') return;
         document.querySelectorAll('.map-consent').forEach(loadMap);
         loadAnalytics();
+        loadPostHog();
     }
 
     // GA4 events for contact clicks (mark whatsapp_click and email_click as key events in GA4)

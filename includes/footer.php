@@ -153,7 +153,7 @@
     </div>
 
     <!-- Main JavaScript -->
-    <script>window.JACAONA_GA4 = <?php echo json_encode(GA4_ID); ?>;</script>
+    <script>window.JACAONA_GA4 = <?php echo json_encode(GA4_ID); ?>; window.JACAONA_POSTHOG = <?php echo json_encode(POSTHOG_KEY === '' ? null : ['key' => POSTHOG_KEY, 'host' => POSTHOG_HOST]); ?>;</script>
     <script>window.JACAONA_I18N = <?php echo json_encode(['lightboxClose' => t('lightbox_close', $lang), 'lightboxLabel' => t('lightbox_label', $lang)], JSON_UNESCAPED_UNICODE); ?>;</script>
     <script src="<?php echo asset('js/main.js', true); ?>"></script>
 </body>

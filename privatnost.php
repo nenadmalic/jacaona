@@ -22,11 +22,12 @@ $sections = $lang === 'en' ? [
     ['Cookies', [
         '<strong>jacaona_consent</strong> (necessary, 180 days): remembers whether you accepted or declined cookies. It contains no personal data and needs no consent.',
         '<strong>Google Analytics</strong> (statistics, only if you accept): counts visits and shows which pages are read, so we can improve the site. Cookies <code>_ga</code> and <code>_ga_*</code>, up to 2 years. Provider: Google Ireland Ltd.',
+        ...(POSTHOG_KEY !== '' ? ['<strong>PostHog</strong> (statistics, only if you accept): shows how the site is used (which pages and buttons), without ads or profiling. Cookie <code>ph_*</code>, up to 1 year. Provider: PostHog Inc., data stored in the EU.'] : []),
         '<strong>Google Maps</strong> (only if you accept or click "Show map"): the map of our hall is loaded from Google, which sets its own cookies. Provider: Google Ireland Ltd.',
         'Without your consent none of the Google services load and no Google cookies are set.',
     ]],
     ['Changing your choice', [
-        'Click <button type="button" data-consent-open class="text-e5 hover:underline">Cookie settings</button> (also at the bottom of every page) to accept or decline again. If you decline after accepting, we delete the Google Analytics cookies.',
+        'Click <button type="button" data-consent-open class="text-e5 hover:underline">Cookie settings</button> (also at the bottom of every page) to accept or decline again. If you decline after accepting, we delete the analytics cookies.',
     ]],
     ['Your rights', [
         'Under the GDPR you have the right to access, correct and erase your data, to restrict or object to its processing, and to withdraw consent at any time. Write to <a href="mailto:info@jacaona.com" class="text-e5 hover:underline">info@jacaona.com</a>.',
@@ -43,11 +44,12 @@ $sections = $lang === 'en' ? [
     ['Kolačići', [
         '<strong>jacaona_consent</strong> (nužan, 180 dana): pamti jeste li kolačiće prihvatili ili odbili. Ne sadrži osobne podatke i za njega nije potrebna privola.',
         '<strong>Google Analytics</strong> (statistika, samo ako prihvatite): broji posjete i pokazuje koje se stranice čitaju, kako bismo mogli poboljšati stranicu. Kolačići <code>_ga</code> i <code>_ga_*</code>, do 2 godine. Pružatelj: Google Ireland Ltd.',
+        ...(POSTHOG_KEY !== '' ? ['<strong>PostHog</strong> (statistika, samo ako prihvatite): pokazuje kako se stranica koristi (koje stranice i gumbi), bez oglasa i profiliranja. Kolačić <code>ph_*</code>, do 1 godine. Pružatelj: PostHog Inc., podaci se čuvaju u EU.'] : []),
         '<strong>Google karta</strong> (samo ako prihvatite ili kliknete „Prikaži kartu”): karta naše dvorane učitava se s Googlea, koji pritom postavlja svoje kolačiće. Pružatelj: Google Ireland Ltd.',
         'Bez vaše privole ne učitava se nijedna Googleova usluga i ne postavlja se nijedan Googleov kolačić.',
     ]],
     ['Promjena odluke', [
-        'Kliknite <button type="button" data-consent-open class="text-e5 hover:underline">Postavke kolačića</button> (i na dnu svake stranice) da biste ponovno prihvatili ili odbili kolačiće. Ako odbijete nakon što ste prihvatili, brišemo kolačiće Google Analyticsa.',
+        'Kliknite <button type="button" data-consent-open class="text-e5 hover:underline">Postavke kolačića</button> (i na dnu svake stranice) da biste ponovno prihvatili ili odbili kolačiće. Ako odbijete nakon što ste prihvatili, brišemo kolačiće za statistiku.',
     ]],
     ['Vaša prava', [
         'Prema Općoj uredbi o zaštiti podataka (GDPR) imate pravo na pristup, ispravak i brisanje svojih podataka, na ograničenje obrade i prigovor te pravo da privolu povučete u bilo kojem trenutku. Pišite nam na <a href="mailto:info@jacaona.com" class="text-e5 hover:underline">info@jacaona.com</a>.',
