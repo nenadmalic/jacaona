@@ -1,0 +1,8 @@
+---
+# cPanel Git Version Control: "Deploy HEAD Commit" copies the site files into
+# the document root. Repo-only files (sources, notes, tooling) are not deployed.
+# No --delete: server-only files (.well-known, cgi-bin) are left alone.
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html/jacaona/
+    - /usr/bin/rsync -rlt --exclude='.git' --exclude='.cpanel.yml' --exclude='.gitignore' --exclude='.cursorrules' --exclude='*.md' --exclude='old/' --exclude='docs/' --exclude='site-performance/' --exclude='scripts/' --exclude='tailwindcss' --exclude='tailwind.config.js' --exclude='css/input.css' --exclude='router.php' ./ $DEPLOYPATH
