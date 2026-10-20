@@ -6,8 +6,11 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Canonical host + HTTPS
-RewriteCond %{HTTP_HOST} ^jacaona\.com$ [NC,OR]
+# Canonical host + HTTPS: every other host name (jacaona.com, hosting aliases)
+# and plain http go to https://www.jacaona.com. SSL certificate checks
+# (/.well-known/) are left alone.
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTP_HOST} !^www\.jacaona\.com$ [NC,OR]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://www.jacaona.com/$1 [R=301,L]
 
@@ -31,6 +34,7 @@ RewriteRule ^$ /en/? [R=301,L]
 # Trailing-slash policy: /en/ keeps its slash, subpages have none
 RewriteRule ^en$ /en/ [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/en/$
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Internal rewrites (REQUEST_URI keeps the /en prefix, which is what
